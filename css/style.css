@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* design menu hamburger */
+#menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px;
+}
+
+.menu .line
+{
+    width: 30px;
+    height: 3px;
+    background-color: #2C0B0E;
+}
+/* End Menu */
+
+/* start logo */
+#logo{
+    margin-left: 40px;
+}
+/*end logl */
+
+/* start profile picture */
+
+#pictureprofile{
+    padding: 23px;
+    display: flex;
+}
+
+#arrow-down{
+    margin-top: 15px;
+    padding: 5px;
+}
+
+#arrow {
+    width: 0;
+    height: 0;
+    margin-left: 8px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+}
+
+#online{
+    background-color: #629C44;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    margin-top: 27px;
+    margin-left: 58px;
+    position: absolute;
+}
