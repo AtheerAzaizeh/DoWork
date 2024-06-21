@@ -193,6 +193,7 @@ span{
     width: 50%;
     height: 29px;
     text-align: center;
+    cursor: pointer;
 }
 #jobsforyou{
     border: solid 1px white;
@@ -202,6 +203,7 @@ span{
     width: 50%;
     height: 29px;
     text-align: center;
+    cursor: pointer;
 }
 #search{
     position: absolute;
@@ -260,7 +262,25 @@ span{
     border-radius: 2px;
 }
 
-
+#listmenu{
+    background-color: white;
+    position: absolute;
+    margin-top: 116px;
+    width: 100%;
+    text-align: left;
+    height: 100%;
+    overflow-y: scroll;
+    border-right: 1px solid #ccc;
+}
+.btndel{
+    float: right;
+    margin-right: 25px;
+    background-color: white;
+    border: solid 0px; 
+}
+#listmenu li{
+    margin-bottom: 14px;
+}
 
 
 /* end pagemenu main */
