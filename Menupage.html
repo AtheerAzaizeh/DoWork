@@ -39,9 +39,39 @@
                 <div class="bar02"></div>
                 <div class="bar03"></div>
             </div>
+            <div id="addbutton"><i class="fa-solid fa-plus"></i></div>
         </section>
-        <section id="listmenu"></section>
-        <section id="scroll"></section>
+        <section id="listmenu">
+            <ul id="alljobsmenu"></ul>
+            <ul id="jobsforyoumenu"></ul>
+        </section>
+        <section id="addjobs">
+            <div id="arrowleft"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="fullname"><h3>Full Name</h3>
+            <input type="text" name="FirstName" id="FirstName" placeholder="FirstName">
+            <input type="text" name="LastName" id="LastName" placeholder="LastName"></div>
+            <div class="EmailAddress"><h3>Email Address</h3>
+            <input type='email' placeholder="example@gmail.com" id="emailadddress"></div>
+            <div class="MobileNumber"><h3>Mobile Number</h3>
+            <input type='number' placeholder="Enter Numbner" id="phonenumber"></div>
+            <div class="agencyname"><h3>Agency Name</h3>
+            <input type="text" placeholder="Agency Name" id="agencyname"></div>
+            <div class="typeworks"><h3>Type Of Works</h3>
+            <span><input type="checkbox">Art</span>
+            <span><input type="checkbox">Sience</span>
+            <span><input type="checkbox">Technology</span>
+            <span><input type="checkbox">Other</span></div>
+            <div class="Location"><h3>Location</h3> <input list="locations" id="location" placeholder="Enter Location"  > 
+            <datalist id="locations"></datalist></div>
+            <div class="Requirements"><h3>Requirements</h3>
+            <input type="text" placeholder="Type Here" style="width: 100%;"></div>
+            <div class="timework">
+               <span><input type="checkbox">Full Time</span>
+                <span><input type="checkbox">Part Time</span>
+            </div>
+            <div id="submit"><input type="submit" value="Submit" id="btnsubmit"></div>
+        </section>
     </main>
 </body>
+<script src="js/script.js"></script>
 </html>

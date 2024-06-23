@@ -274,13 +274,76 @@ span{
 }
 .btndel{
     float: right;
-    margin-right: 25px;
+    margin-right: 15px;
     background-color: white;
     border: solid 0px; 
 }
 #listmenu li{
     margin-bottom: 14px;
 }
-
-
+.btnarrowright{
+    float: right;
+    margin-right: 5px;
+}
+#addbutton{
+    float: right;
+    margin-left: 13px;
+    margin-top: 5px;
+}
+#addjobs{
+    display: none;
+    text-align: left;
+    margin: 5px 10px;
+}
+#addjobs h3{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+.fullname{
+    justify-content: space-between;
+    margin-top: 10px;
+}
+input{
+    border: solid 0px;
+    width: 100%;
+    height: 42px;
+    text-align: center;
+    
+}
+.fullname input{
+    border: solid 0px;
+    width: 160px;
+    height: 42px;
+    display: inline-flex;
+    text-align: center;
+    margin-right: 8px;
+}
+.typeworks{
+    display: block;
+    width: 100%;
+}
+.typeworks h3{
+    width: 100%;
+}
+.typeworks span , .timework span{
+    align-items: center;
+    display: inline-flex;
+    margin: 0px 7px;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: Helvetica;
+}
+.typeworks input , .timework input{
+    width: 15px;
+}
+.timework span{
+    margin: 0px 40px;
+}
+#btnsubmit{
+    background-color: #20C997;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Helvetica;
+}
 /* end pagemenu main */
