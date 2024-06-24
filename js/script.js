@@ -137,4 +137,26 @@ document.addEventListener("DOMContentLoaded", function() {
             activesection.style.display = 'none';
         }
     }
+    function showJobDetails(job) {
+        const jobTitle = document.getElementById("titlethejob");
+        const timeAgo = document.getElementById("timeago");
+        const LocationSalary = document.getElementById("location-salary");
+        const Location = LocationSalary.querySelector('#location');
+        const salary = LocationSalary.lastChild;
+        const explanation = document.getElementById("explanjob");
+        const requirements = document.getElementById('requirements');
+        const sections = document.querySelectorAll('section');
+
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+        jobTitle.textContent = job.title;
+        timeAgo.textContent = job.timeago;
+        Location.textContent = job.location; 
+        salary.textContent = `Salary: ${job.salary}`;
+        explanation.innerHTML = `Position Overview: <br>${job.description}`;
+        requirements.innerHTML = `Requirements:<br>${job.requirements}`;
+        jobDetailsSection.style.display = 'block';
+        arrowleft.style.display = '';
+    }
 });
