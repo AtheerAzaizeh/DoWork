@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const allJobsMenu = document.getElementById("alljobsmenu");
     const jobsForYouMenu = document.getElementById("jobsforyoumenu");
     const addbutton = document.getElementById('addbutton');
+    const arrowleft = document.getElementById('arrowleft');
     let checkerswitch = false; 
 
     const locations = [
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     alljobsclr.addEventListener('click', handleMenuSwitch);
     jobsforyouclr.addEventListener('click', handleMenuSwitch);
     addbutton.addEventListener('click', showAddJobsSection);
+    arrowleft.addEventListener('click' , returnback);
 
     function initializeLocations(locations, datalistSelector) {
         const datalist = document.querySelector(datalistSelector);
@@ -62,20 +64,24 @@ document.addEventListener("DOMContentLoaded", function() {
         li.setAttribute("data-id", item.id);
         li.textContent = item.title;
 
-        li.appendChild(createArrowRight());
+        li.appendChild(createArrowRight(item));
         li.appendChild(createDeleteButton(li));
         list.appendChild(li);
     }
 
-    function createArrowRight() {
+    function createArrowRight(job) {
         const arrowRight = document.createElement('i');
-        arrowRight.className = 'btnarrowright fa-solid fa-arrow-right arrow-right-icon';
+        arrowRight.className = 'btnarrowright fas fa-arrow-right arrow-right-icon';
+        arrowRight.addEventListener('click', function() {
+            showJobDetails(job);
+        });
         return arrowRight;
     }
 
     function createDeleteButton(li) {
         const deleteButton = document.createElement("i");
         deleteButton.className = "btndel fa-solid fa-trash trash-icon";
+        deleteButton.style.cursor = 'pointer';
         deleteButton.addEventListener("click", function() {
             li.remove();
         });
@@ -117,6 +123,18 @@ document.addEventListener("DOMContentLoaded", function() {
         const targetSection = document.getElementById('addjobs');
         if (targetSection) {
             targetSection.style.display = 'block';
+        }
+    }
+    
+    function returnback(event) {
+        const targetId = event.target.id;
+        const sections = document.querySelectorAll('section');
+        const activesection = document.getElementById('addjobs');
+        if (targetId === 'arrowleft') {
+            sections.forEach(section => {
+                section.style.display = '';
+            });
+            activesection.style.display = 'none';
         }
     }
 });
