@@ -11,7 +11,7 @@ header{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 90px;
+    height: 89px;
     background-color: white;
 }
 
@@ -41,7 +41,8 @@ header{
 
 /* start logo */
 #logo{
-    margin-left: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 /*end logl */
 
@@ -351,6 +352,9 @@ input{
 /* end pagemenu main */
 
 /* Sidebar styles */
+#menuicon{
+    cursor: pointer;
+}
 #sidebar {
     height: 100%;
     width: 209px;
@@ -461,4 +465,100 @@ input{
     cursor: pointer;
     font-size: 1rem;
     float: right;
+}
+
+#arrowleftIcon {
+    cursor: pointer;
+    font-size: 14px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+#arrowleftIcon i {
+    margin-right: 8px;
+}
+.content p {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 2px;
+}
+.tab-bar {
+    margin-top: 15px;
+    display: flex;
+    background-color: #fff;
+    border-radius: 0px 20px 20px 0px;
+}
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tab i {
+    margin-right: 8px;
+}
+.tab.active {
+    background-color: #A6E9D5;
+    color: #000;
+    font-weight: bold;
+    border-radius: 0px 20px 20px 0px;
+}
+.content {
+    padding: 20px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.photo-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.photo-placeholder {
+    width: 190px;
+    height: 150px;
+    background-color: #e6e6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.photo-placeholder span {
+    position: absolute;
+    bottom: 10px;
+    font-size: 14px;
+    color: #000;
+}
+input {
+    padding: 10px;
+    border-radius: 10px;
+    width: 333px;
+    height: 32px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+button.next-step {
+    width: 120px;
+    height: 32px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #A6E9D5;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button.next-step:hover {
+    color: #45a049;
 }
