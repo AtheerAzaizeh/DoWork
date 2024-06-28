@@ -6,6 +6,7 @@
     <title>Do-Work Create CV Page</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/createcv.js" defer></script>
 </head>
 <body>
     <header>
@@ -24,10 +25,10 @@
             <div class="tab active">
                 <i class="fas fa-user"></i> Personal
             </div>
-            <div class="tab">
+            <div class="tab" id="experienceTab">
                 <i class="fas fa-clipboard-list"></i> Experiences
             </div>
-            <div class="tab">
+            <div class="tab" id="templateTab">
                 <i class="fas fa-images"></i> Template
             </div>
         </div>
@@ -35,16 +36,19 @@
         <div class="content">
             <div class="form">
                 <div class="photo-upload">
-                    <div class="photo-placeholder">
+                    <div id="photoPlaceholder" class="photo-placeholder" onclick="openPhotoInput()">
                         <i class="fas fa-camera"></i>
                         <span>Add Photo</span>
                     </div>
+                    <input type="file" id="photoInput" style="display:none;" onchange="displaySelectedPhoto(this)">
                 </div>
-                <input type="text" placeholder="Enter Your Name">
-                <input type="email" placeholder="Enter Your Email">
-                <input type="text" placeholder="Enter Your Location">
-                <input type="tel" placeholder="Enter Phone Number">
-                <button class="next-step">Next Step</button>
+                <input type="text" id="nameInput" placeholder="Enter Your Name" required>
+                <input type="email" id="emailInput" placeholder="Enter Your Email" required>
+                <input type="text" id="locationInput" placeholder="Select Location" list="locations" required>
+                <datalist id="locations"></datalist>
+                <input type="tel" id="phoneNumber" placeholder="Enter Phone Number" required>
+                <div id="phoneError" class="error-message"></div>
+                <button type="button" class="next-step" onclick="validateForm()">Next Step</button>
             </div>
         </div>
     </div>
