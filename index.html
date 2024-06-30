@@ -6,14 +6,19 @@
     <title>Do-Work Home Page</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="js/O,C-Menu.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300;400;700&display=swap" rel="stylesheet">
+    <script  src="js/sidebarmenu.js" defer></script>
 </head>
 <body>
     <header>
-        <nav id="menu">
-            <span id="menuicon"><i class="fas fa-bars"></i></span>
+        <nav class="menu">
+            <div id="menuicon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </nav>
-        <div id="logo"><img src="images/logo.png" width="104" height="89" alt="Logo"></div>
+        <div id="logo" onclick="location.href='index.html'"><img src="images/logo.png" width="104" height="89" alt="Logo"></div>
         <div id="pictureprofile">      
             <nav id="arrow-down" ><div id="arrow"></div></nav>
             <img src="images/aurly.png" width="40" height="40" alt="Profile Picture">
@@ -21,7 +26,7 @@
         </div>
     </header>
     <main>
-        <p>Welcome back Aurly!</p>
+        <p class="welcom">Welcome back Aurly!</p>
         <section id="jobs">
             <div id="headerjobs"><h3>Jobs</h3></div>
             <div id="menujobs">
@@ -71,9 +76,9 @@
         </section>
     </main>
     <footer>
-        <div id="settings"><i class="fa-solid fa-gear" style="font-size: 24px;"></i><span>Setting</span></div>
-        <div id="home"> <i class="fa-solid fa-house" style="font-size: 24px;"></i></i><span>Home</span> </div>
-        <div id="nofications"><i class="fa-solid fa-bell" style="font-size: 24px;"></i></i><span>Notifications</span></div>
+        <div id="settings"><i class="fa-solid fa-gear" style="font-size: 24px; color: #6C757D;"></i><span>Setting</span></div>
+        <div id="home"> <i class="fa-solid fa-house" style="font-size: 24px; color: black;"></i></i><span>Home</span> </div>
+        <div id="nofications"><i class="fa-solid fa-bell" style="font-size: 24px; color: #6C757D;"></i></i><span>Notifications</span></div>
     </footer>
 </body>
 </html>
