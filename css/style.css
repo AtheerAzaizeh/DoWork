@@ -2,11 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
 body{
     background-color: #E9ECEF;
 }
-
 header{
     display: flex;
     justify-content: space-between;
@@ -14,7 +12,6 @@ header{
     height: 89px;
     background-color: white;
 }
-
 /* design menu hamburger */
 #menu{
     display: flex;
@@ -22,7 +19,6 @@ header{
     align-items: center;
     padding: 10px;
 }
-
 .menu{
     cursor: pointer;
     display: flex;
@@ -30,7 +26,6 @@ header{
     justify-content: space-around;
     height: 25px;
 }
-
 .menu .line
 {
     width: 30px;
@@ -66,7 +61,6 @@ header{
     border-right: 5px solid transparent;
     border-top: 5px solid black;
 }
-
 #online{
     background-color: #629C44;
     border-radius: 50%;
@@ -77,7 +71,6 @@ header{
     position: absolute;
 }
 /* end profile picture and online circle , all the header */
-
 /* start main */
 main{
     text-align: center;
@@ -561,4 +554,168 @@ button.next-step {
 }
 button.next-step:hover {
     color: #45a049;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+/* createCVNextpage css*/
+main .sections {
+    margin-top: 20px;
+}
+
+main .sections .section {
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+main .sections .section:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+main .sections .section h2 {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    color: #000;
+}
+
+main .sections .section h2 i {
+    margin-right: 10px;
+}
+
+main .sections .section .fas.fa-chevron-down {
+    margin-left: auto;
+}
+
+main .sections .section .content-section {
+    display: none;
+    flex-direction: column;
+    width: 95%;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+main .sections .section .content-section textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.save-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+.save-button button {
+    padding: 10px 20px;
+    background-color: #A6E9D5;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.save-button button:hover {
+    background-color: #60cc608c;
+    color: #000;
+}
+/*end*/
+.makecv-link {
+    text-decoration: none;
+    color: inherit;
+}
+.no-underline {
+    text-decoration: none;
+}
+/*template page*/
+.arrows {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cv-wrapper {
+    width: 267px;
+    height: 337px;
+    overflow: hidden;
+    background-color: #FFFF;
+}
+
+.cv-page {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.cv-content {
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-y: auto;
+    height: calc(100% - 40px); /* Adjust based on padding */
+}
+
+.profile-picture img {
+    border-radius: 50%;
+    max-width: 100px;
+}
+
+.contact-info {
+    margin-bottom: 15px;
+}
+
+.cv-content h1,
+.cv-content h2,
+.cv-content h3,
+.cv-content h4,
+.cv-content h5,
+.cv-content h6 {
+    margin-bottom: 10px;
+}
+
+.cv-content ul {
+    padding-left: 20px;
+}
+
+.cv-content p,
+.cv-content ul {
+    margin-bottom: 10px;
+}
+
+.arrow {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+}
+
+.use-template {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.use-template button {
+    background-color: #A6E9D5;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.use-template button:hover {
+    background-color: #0056b3;
 }
