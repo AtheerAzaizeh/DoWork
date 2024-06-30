@@ -5,26 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu of Jobs</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300;400;700&display=swap" rel="stylesheet">
+    <script type="module" src="js/main.js" defer></script>
+    <script src="js/sidebarmenu.js"></script>
 </head>
 <body>
     <header>
-        <nav id="menu">
-            <div class="menu">
+        <nav class="menu">
+            <div id="menuicon">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
         </nav>
-        <div id="logo"><img src="images/logo.png" width="104" height="89" alt="Logo"></div>
+        <div id="logo" onclick="location.href='index.html'"><img src="images/logo.png" width="104" height="89" alt="Logo"></div>
         <div id="pictureprofile">      
-            <nav id="arrow-down" ><div id="arrow"></div></nav>
+            <nav id="arrow-down"><div id="arrow"></div></nav>
             <img src="images/aurly.png" width="40" height="40" alt="Profile Picture">
             <div id="online"></div>
         </div>
     </header>
-    <main>
-        <section id="Arrowleft"><i class="fa-solid fa-arrow-left" style="font-size: 24px; cursor: pointer;"></i></section>
+    <main id="menupage">
+        <section class="Arrowleft"><i id="arrowleft" class="fa-solid fa-arrow-left" style="font-size: 24px; cursor: pointer;"></i></section>
         <section id="titlemenu">
             <div id="alljobs">All jobs</div>
             <div id="jobsforyou">Jobs For You</div>
@@ -46,32 +49,89 @@
             <ul id="jobsforyoumenu"></ul>
         </section>
         <section id="addjobs">
-            <div class="arrowleft"><i style="cursor: pointer;" class="fa-solid fa-arrow-left" id="arrowleft"></i></div>
-            <div class="fullname"><h3>Full Name</h3>
-            <input type="text" name="FirstName" id="FirstName" placeholder="FirstName">
-            <input type="text" name="LastName" id="LastName" placeholder="LastName"></div>
-            <div class="EmailAddress"><h3>Email Address</h3>
-            <input type='email' placeholder="example@gmail.com" id="emailadddress"></div>
-            <div class="MobileNumber"><h3>Mobile Number</h3>
-            <input type='number' placeholder="Enter Numbner" id="phonenumber"></div>
-            <div class="agencyname"><h3>Agency Name</h3>
-            <input type="text" placeholder="Agency Name" id="agencyname"></div>
-            <div class="typeworks"><h3>Type Of Works</h3>
-            <span><input type="checkbox">Art</span>
-            <span><input type="checkbox">Sience</span>
-            <span><input type="checkbox">Technology</span>
-            <span><input type="checkbox">Other</span></div>
-            <div class="Location"><h3>Location</h3> <input list="locations" id="location" placeholder="Enter Location"  > 
-            <datalist id="locations"></datalist></div>
-            <div class="Requirements"><h3>Requirements</h3>
-            <input type="text" placeholder="Type Here" style="width: 100%;"></div>
-            <div class="timework">
-               <span><input type="checkbox">Full Time</span>
-                <span><input type="checkbox">Part Time</span>
+            <form id="addjobsForm" method="post" action="/submit-jobs">
+                <div>
+                    <i id="Arrowleft" style="cursor: pointer; font-size: 24px;" class="fa-solid fa-arrow-left"></i>
+                </div>
+                <div class="fullname">
+                    <h3>Full Name</h3>
+                    <input type="text" name="FirstName" id="FirstName" placeholder="First Name" required>
+                    <input type="text" name="LastName" id="LastName" placeholder="Last Name" required>
+                </div>
+                <div class="jobtitle">
+                    <h3>Job Title</h3>
+                    <input type="text" name="jobtitle" id="jobtitle" placeholder="Job Title" required>
+                </div>
+                <div class="EmailAddress">
+                    <h3>Email Address</h3>
+                    <input type="email" name="emailaddress" placeholder="example@gmail.com" id="emailaddress" required>
+                </div>
+                <div class="MobileNumber">
+                    <h3>Mobile Number</h3>
+                    <input type="number" name="phonenumber" placeholder="Enter Number" id="phonenumber" required>
+                </div>
+                <div class="agencyname">
+                    <h3>Agency Name</h3>
+                    <input type="text" name="agencyname" placeholder="Agency Name" id="agencyname" required>
+                </div>
+                <div class="typeworks">
+                    <h3>Type Of Works</h3>
+                    <span><input type="checkbox" class="single-cb" name="typeworks" value="Art" id="art">Art</span>
+                    <span><input type="checkbox" class="single-cb" name="typeworks" value="Science" id="science">Science</span>
+                    <span><input type="checkbox" class="single-cb" name="typeworks" value="Technology" id="technology">Technology</span>
+                    <span><input type="checkbox" class="single-cb" name="typeworks" value="Other" id="other">Other</span>
+                </div>
+                <div class="Location">
+                    <h3>Location</h3>
+                    <input list="locations"  name="location" id="location" placeholder="Enter Location" required>
+                    <datalist id="locations"></datalist>
+                </div>
+                <div class="Requirements">
+                    <h3>Requirements</h3>
+                    <input type="text" name="requirements" placeholder="Type Here" style="width: 100%;" id="requirements" required>
+                </div>
+                <div class="timework">
+                    <span><input type="checkbox" class="cb-times" name="timework" value="Full Time" id="fulltime">Full Time</span>
+                    <span><input type="checkbox" class="cb-times" name="timework" value="Part Time" id="parttime">Part Time</span>
+                </div>
+                <div id="submit">
+                    <input type="submit" value="Submit" id="btnsubmit">
+                </div>
+            </form>
+        </section>
+        <section id="successModal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Please wait a moment..</p>
+              <i class="fa-brands fa-searchengin" style="font-size: 49px;"></i>
             </div>
-            <div id="submit"><input type="submit" value="Submit" id="btnsubmit"></div>
+        </section>
+        <section id="sidebar">
+            <div class="headersidebar">
+                <i class="searchicon fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Search" >
+                <span id="exit-icon">&#x2716;</span>
+            </div>
+            <div class="profile">
+                <img src="images/aurly.png" width="59" height="59" alt="Profile Picture" class="profile-img">
+                <h2 class="profile-name">Aurly Dahan</h2>
+                <p class="profile-email">aurlydahan@gmail.com</p>
+            </div>
+            <nav class="sidebarmenu">
+                <ul>
+                    <li class="homeicon"><a href="#"><i class="fas fa-home"></i>Home</a><i class="fa-solid fa-arrow-left" id="arrowleft"></i></li>
+                    <li class="jobsicon"><a href="#"><i class="fas fa-list"></i>Jobs list</a><i class="fa-solid fa-arrow-left" id="arrowleft"></i></li>
+                    <li class="posticon"><a href="#"><i class="fas fa-edit document"></i>Post a job</a><i class="fa-solid fa-arrow-left" id="arrowleft"></i></li>
+                    <li class="createcvicon"><a href="#"><i class="fas fa-pen"></i>Create CV</a><i class="fa-solid fa-arrow-left" id="arrowleft"></i></li>
+                    <li class="setinterviewicon"><a href="#"><i class="fas fa-handshake"></i>Set interview</a><i class="fa-solid fa-arrow-left" id="arrowleft"></i></li>
+                    <li class="findjobicon"><a href="#"><i class="fas fa-search"></i>Find a job</a><i class="fa-solid fa-arrow-left" id="arrowleft"></i></li>
+                    <div class="footersidebarmenu">
+                        <li class="settingicon"><a href="#"><i class="fas fa-cog"></i>Settings</a><i class="fa-solid fa-arrow-left" id="arrowleft"></i></li>
+                        <li class="contactusicon"><a href="#"><i class="fas fa-person circle question"></i>Contact us</a><i class="fa-solid fa-arrow-left" id="arrowleft"></i></li>
+                    </div>
+                </ul>
+            </nav>
         </section>
     </main>
 </body>
-<script src="js/script.js"></script>
 </html>
