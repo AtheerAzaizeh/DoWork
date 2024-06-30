@@ -7,12 +7,22 @@ export class EventListeners {
   }
 
   async addEventListeners() {
+    this.setUIEventListeners();
     this.ensureSingleCheckboxSelection('single-cb');
     this.ensureSingleCheckboxSelection('cb-times');
 
     await this.jobService.fetchJobs();
     this.jobService.fetchAllJobs();
   }
+
+  setUIEventListeners() {
+    document.getElementById('alljobs').addEventListener('click', () => this.handleMenuSwitch(true));
+    document.getElementById('jobsforyou').addEventListener('click', () => this.handleMenuSwitch(false));
+    document.getElementById('addbutton').addEventListener('click', () => this.showAddJobsSection());
+    document.getElementById('arrowleft').addEventListener('click', (event) => this.returnBack(event));
+    document.getElementById('Arrowleft').addEventListener('click', (event) => this.returnBack(event));
+  }
+
 
   ensureSingleCheckboxSelection(className) {
     const checkboxes = document.querySelectorAll(`.${className}`);
