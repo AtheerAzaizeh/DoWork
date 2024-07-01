@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Template</title>
+    <title>CV Template page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/templatepage.js"></script>
 </head>
 <body>
     <header>
-        <a href="index.html" id="arrowleftIcon" class="no-underline"><i class="fas fa-arrow-left"></i> Make your CV</a>
+        <a href="CreateCVExperiencepage.html" id="arrowleftIcon" class="no-underline"><i class="fas fa-arrow-left"></i> Make your CV</a>
         <div id="logo"><img src="images/logo.png" width="104" height="89" alt="Logo"></div>
         <div id="pictureprofile">
             <nav id="arrow-down"><div id="arrow"></div></nav>
@@ -21,13 +22,13 @@
         <div class="content">
             <p>Personal details</p>
             <div class="tab-bar">
-                <div class="tab active">
+                <div class="tab" id="personalTab">
                     <i class="fas fa-user"></i> Personal
                 </div>
                 <div class="tab" id="experienceTab">
                     <i class="fas fa-clipboard-list"></i> Experiences
                 </div>
-                <div class="tab" id="templateTab">
+                <div class="tab active">
                     <i class="fas fa-images"></i> Template
                 </div>
             </div>
@@ -39,37 +40,22 @@
                 <div class="cv-page">
                     <div class="cv-content">
                         <div class="profile-picture">
-                            <img src="images/aurlynewPicture.png" width="100" height="100" alt="Profile Picture">
+                            <img id="photoPlaceholder" src="images/default-profile-picture.jpg" width="100" height="100" alt="Profile Picture">
                         </div>
-                        <h1>Aurly Dahan</h1>
+                        <h1 id="nameInput">Your Name</h1>
                         <div class="contact-info">
-                            <p>Ptah Tisa, Israel | (+972) 540607412 | aurlydahan@gmail.com</p>
-                            <p>LinkedIn: linkedin.com/in/aurlydahan</p>
+                            <p id="locationInput">Location</p>
+                            <p id="phoneNumber">Phone Number</p>
+                            <p id="emailInput">Email Address</p>
                         </div>
-                        <h2>Professional Experience</h2>
-                        <p><strong>Tech Solutions Ltd, Tel Aviv, Israel</strong></p>
-                        <p>June 2022 - Present</p>
-                        <ul>
-                            <li>Developed test plans and cases, covering functional and regression testing.</li>
-                            <li>Contributed to Agile sprints, prioritized issues, and provided detailed reports.</li>
-                            <li>Facilitated knowledge-sharing initiatives within the team.</li>
-                        </ul>
-                        <h2>Education</h2>
-                        <p><strong>Bachelor of Science in Computer Science</strong></p>
-                        <p>Tel Aviv University, Tel Aviv, Israel</p>
-                        <h2>Skills</h2>
-                        <ul>
-                            <li>Proficient in software testing methodologies and tools.</li>
-                            <li>Strong analytical and problem-solving skills.</li>
-                            <li>Familiarity with Agile development methodologies.</li>
-                        </ul>
-                        <h2>Certifications</h2>
-                        <p><strong>Certified Software Tester (CST)</strong>, International Software Testing Qualifications Board</p>
-                        <h2>Languages</h2>
-                        <ul>
-                            <li>Hebrew: Fluent</li>
-                            <li>English: Proficient</li>
-                        </ul>
+                        <h2 id="resumeOdjectiveHeadder">Resume objective</h2>
+                        <p id="resumeOdjectiveContent"></p>
+                        <h2 id="educationHeader">Education</h2>
+                        <p id="educationContent"></p>
+                        <h2 id="skillsHeader">Skills</h2>
+                        <ul id="skillsList"></ul>
+                        <h2 id="experienceHeader">Professional Experience</h2>
+                        <p id="experienceContent"></p>
                     </div>
                 </div>
             </div>
@@ -77,7 +63,7 @@
         </div>
         
         <div class="use-template">
-            <button>Use this Template</button>
+            <button id="useTemplateBtn">Use this Template</button>
         </div>
     </main>
 </body>
