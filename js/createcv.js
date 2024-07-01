@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
+    
     const nameInput = document.getElementById("nameInput");
     const emailInput = document.getElementById("emailInput");
     const locationInput = document.getElementById("locationInput");
     const phoneNumberInput = document.getElementById("phoneNumber");
+    const photoInput = document.getElementById("photoInput");
 
     const locations = [
         "Jerusalem", "Tel Aviv", "Haifa", "Rishon LeZion", "Petah Tikva", "Ashdod", "Netanya", "Beersheba", 
@@ -16,6 +18,26 @@ document.addEventListener("DOMContentLoaded", function() {
     initializeLocations(locations, "#locations");
 
     phoneNumberInput.addEventListener("input", validatePhoneNumber);
+
+    photoInput.addEventListener("change", function() {
+        displaySelectedPhoto(this);
+    });
+    nameInput.addEventListener("input", function() {
+        saveToLocalStorage("name", this.value);
+    });
+    emailInput.addEventListener("input", function() {
+        saveToLocalStorage("email", this.value);
+    });
+
+    locationInput.addEventListener("input", function() {
+        saveToLocalStorage("location", this.value);
+    });
+
+    phoneNumberInput.addEventListener("input", function() {
+        saveToLocalStorage("phoneNumber", this.value);
+    });
+
+    loadStoredData();
 });
 
 function initializeLocations(locations, datalistSelector) {
@@ -63,6 +85,8 @@ function displaySelectedPhoto(input) {
             img.width = 192;
             img.height = 150;
             photoPlaceholder.appendChild(img);
+
+            saveToLocalStorage("photo", e.target.result);
         };
         reader.readAsDataURL(input.files[0]);
     }
@@ -79,6 +103,40 @@ function validateForm() {
         return false;
     }
     
-    window.location.href = "CreateCVNextpage.html";
+    window.location.href = "CreateCVExperiencepage.html";
     return true;
 }
+function saveToLocalStorage(key, value) {
+    localStorage.setItem('cv_' + key, value);
+}
+
+function loadStoredData() {
+    const storedPhoto = localStorage.getItem("photoInput");
+    const storedName = localStorage.getItem("nameInput");
+    const storedEmail = localStorage.getItem("emailInput");
+    const storedLocation = localStorage.getItem("locationInput");
+    const storedPhone = localStorage.getItem("phoneNumberInput");
+
+    if (storedPhoto) {
+        const photoPlaceholder = document.getElementById("photoPlaceholder");
+        while (photoPlaceholder.firstChild) {
+            photoPlaceholder.removeChild(photoPlaceholder.firstChild);
+        }
+        const img = document.createElement("img");
+        img.src = storedPhoto;
+        img.alt = "Stored Photo";
+        img.width = 192;
+        img.height = 150;
+        photoPlaceholder.appendChild(img);
+    }
+    if (storedName) document.getElementById("nameInput").value = storedName;
+    if (storedEmail) document.getElementById("emailInput").value = storedEmail;
+    if (storedLocation) document.getElementById("locationInput").value = storedLocation;
+    if (storedPhone) document.getElementById("phoneNumber").value = storedPhone;
+}
+saveToLocalStorage("name", name);
+    saveToLocalStorage("email", email);
+    saveToLocalStorage("location", location);
+    saveToLocalStorage("phoneNumber", phoneNumber);
+
+    
