@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do-Work Home Page</title>
+    <title>Jobs View</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300;400;700&display=swap" rel="stylesheet">
-    <script  src="js/sidebarmenu.js" defer></script>
+    <script type="module" src="js/jobsview.js" defer></script>
+    <script src="js/sidebarmenu.js"></script>
 </head>
 <body>
     <header>
@@ -20,34 +21,39 @@
         </nav>
         <div id="logo" onclick="location.href='index.html'"><img src="images/logo.png" width="104" height="89" alt="Logo"></div>
         <div id="pictureprofile">      
-            <nav id="arrow-down" ><div id="arrow"></div></nav>
+            <nav id="arrow-down"><div id="arrow"></div></nav>
             <img src="images/aurly.png" width="40" height="40" alt="Profile Picture">
             <div id="online"></div>
         </div>
     </header>
     <main>
-        <p class="welcom">Welcome back Aurly!</p>
-        <section id="jobs">
-            <div id="headerjobs"><h3>Jobs</h3></div>
-            <div id="menujobs">
-                <menu>
-                    <ol>
-                    <li>Accountant - Precision Accounting Services <a href="#">Read More</a> </li>
-                    <li>Chef - Eyal Shani Group <a href="#"> Read More</a> </li>
-                    <li>Customer Service Representative - Wolt <a href="#"> Read More</a> </li>
-                    </ol>
-                </menu>
+        <div id ="deletejobinclude"></div>
+        <section class="Arrowleft"><i id="arrowleft" class="fa-solid fa-arrow-left" style="font-size: 24px; cursor: pointer;"></i></section>
+        <section id="titlemenu">
+            <div id="alljobs">All jobs</div>
+            <div id="jobsforyou">Jobs For You</div>
+        </section>
+        <section id="includejobs">
+            <div id="titlethejob"></div>
+            <div id="timeago"></div>
+            <div id="location-salary">
+                <div id="locationjob"></div>
+                <div id="salary"></div>
             </div>
-            <div id="footerjobs"><a href="Menupage.html">Load More Jobs</a></div>
+            <div id="positionoverview"></div>
+            <div id="requirements"></div>
+            <div id="sendcv"><button>Send CV</button></div>
         </section>
-        <section id="instructions">
-            <div id="makecv"><h4>Make CV</h4><img src="images/makecv.png" width="75" height="75" alt=""></div>
-            <div id="postjob"><h4>Post a Job</h4> <img src="images/postjob.jpeg" width="75" height="75" alt=""></div>
-            <div id="findjob"><h4>Find a Job</h4> <img src="images/findjob.jpeg" width="75" height="75" alt=""></div>
-            <div id="workers"><h4>Workers</h4> <img src="images/workers.png" width="75" height="75" alt=""></div>
-            <div id="interview"><h4>Interview</h4> <img src="images/interview.jpeg" width="75" height="75" alt=""></div>
-            <div id="reports"><h4>Reports</h4> <img src="images/reports.png" width="75" height="75" alt=""></div>
-        </section>
+        <div id="modal">
+            <div class="modal-content">
+              <div class="circle-check">
+                <i class="fa fa-check"></i>
+              </div>
+              <h2 class="modal-title">Sent Successfully</h2>
+              <p class="modal-text">Your Cv has been sent<br> turn on notifications to see updates</p>
+              <button id="modalOkButton" class="modal-button">OK</button>
+            </div>
+          </div>
         <section id="sidebar">
             <div class="headersidebar">
                 <i class="searchicon fa-solid fa-magnifying-glass"></i>
@@ -75,10 +81,5 @@
             </nav>
         </section>
     </main>
-    <footer>
-        <div id="settings"><i class="fa-solid fa-gear" style="font-size: 24px; color: #6C757D;"></i><span>Setting</span></div>
-        <div id="home"> <i class="fa-solid fa-house" style="font-size: 24px; color: black;"></i></i><span>Home</span> </div>
-        <div id="nofications"><i class="fa-solid fa-bell" style="font-size: 24px; color: #6C757D;"></i></i><span>Notifications</span></div>
-    </footer>
 </body>
 </html>

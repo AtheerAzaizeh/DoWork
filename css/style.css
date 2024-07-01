@@ -1,54 +1,97 @@
-*{
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+/* Body styling */
+body {
     background-color: #E9ECEF;
 }
-header{
+
+/* Header styling */
+header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 89px;
+    height: 90px;
     background-color: white;
 }
-/* design menu hamburger */
-#menu{
+
+/* Menu styling */
+.menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding-left: 10px;
 }
-.menu{
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+
+#menuicon {
+    margin: 20px auto;
+    width: 25px;
     height: 25px;
+    position: relative;
+    cursor: pointer;
 }
-.menu .line
-{
+
+#menuicon .line {
     width: 30px;
     height: 3px;
     background-color: #2C0B0E;
+    transition: all 0.3 ease;
+    left: 0;
+    position: absolute;
 }
-/* End Menu */
-
-/* start logo */
-#logo{
-    margin-left: 0px;
-    margin-right: 0px;
+#menuicon div:first-child{
+    top: 0;
 }
-/*end logl */
+#menuicon div:nth-child(2){
+    top : 8px;
+}
+#menuicon div:last-child{
+    top: 16px;
+}
+#menuicon:hover div:nth-child(2){
+    opacity: 0 ;
+}
+#menuicon:hover div:first-child ,
+#menuicon:hover div:last-child{
+    top: 6px;
+    background-color: #20C997;
+}
+#menuicon:hover div:first-child{
+    transform: rotate(45deg);
+}
+#menuicon:hover div:last-child{
+    transform:rotate(-45deg);
+}
+/* Logo styling */
+@keyframes logoanimation {
+    from{
+        transform: rotate3d(0, 0, 0, 0);
+    }
+    to{
+        transform: rotate3d(0, 1, 0, 360deg);
+    }
+}
+#logo:hover{
+    animation-play-state: paused;
+}
+#logo {
+    cursor: pointer;
+    margin-left: 25px;
+    animation: logoanimation 5s linear infinite;
+}
 
-/* start profile picture */
-
-#pictureprofile{
-    padding: 23px;
+/* Profile picture styling */
+#pictureprofile {
+    padding-right: 10px;
     display: flex;
 }
 
-#arrow-down{
+/* Arrow styling */
+#arrow-down {
     margin-top: 15px;
     padding: 5px;
 }
@@ -61,7 +104,9 @@ header{
     border-right: 5px solid transparent;
     border-top: 5px solid black;
 }
-#online{
+
+/* Online indicator */
+#online {
     background-color: #629C44;
     border-radius: 50%;
     width: 13px;
@@ -70,25 +115,65 @@ header{
     margin-left: 58px;
     position: absolute;
 }
-/* end profile picture and online circle , all the header */
-/* start main */
-main{
+
+/* Main content styling */
+main {
     text-align: center;
 }
-p{
+:root{
+    --main-color:rgb(0, 0, 0 / 80%);
+}
+.welcom{
     text-align: center;
-    margin: 10px;
+    margin: 10px auto;
     font-size: 16px;
+    font-family: 'Aleo';
+    font-weight: bold;
+    color: var(--main-color);
+    border-right:2px solid var(--main-color);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: control-width 1s steps(30) 1s both;
 }
-#jobs{
+
+@keyframes control-width{
+    from{
+        width: 0px;
+    }
+    to{
+        width: 94%;
+    }
+}
+.modal p {
     text-align: center;
+    margin: 10px auto;
+    font-size: 16px;
+    font-family: 'Aleo';
+    font-weight: bold;
+    color: var(--main-color);
+    border-right:2px solid var(--main-color);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: control-width 1s steps(30) 1s both;
+}
+@keyframes control-width{
+    from{
+        width: 0px;
+    }
+    to{
+        width: 100%;
+    }
+}
+/* Jobs section styling */
+#jobs {
     width: 100%;
     height: 160px;
 }
-menu
-{
+
+menu {
     height: 88px;
 }
+
 #headerjobs {
     background-color: #D2F4EA;
     border: solid #D2F4EA;
@@ -96,82 +181,99 @@ menu
     border-top-right-radius: 20px;
     height: 27px;
 }
-#menujobs{
+
+#menujobs {
     text-align: left;
+    justify-content: center;
     padding: 8px;
     background-color: #A6E9D5;
 }
-ol
-{
+
+ol {
     list-style-type: none;
 }
-li{
+
+li {
     font-size: 13px;
     padding: 8px;
 }
-li a{
+
+li:hover {
+    background-color: #A6E9D5;
+}
+
+li a {
     float: right;
 }
-#footerjobs{
+
+#footerjobs {
     background-color: #D2F4EA;
     border: solid #D2F4EA;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     height: 27px;
 }
-#footerjobs a{
+
+#footerjobs a {
     font-size: 14px;
 }
 
-#instructions{
-    margin-top: 10px;
+#instructions {
+    margin-top: 10%;
 }
-#instructions div{
+#instructions div {
     width: 81px;
     height: 77px;
-    background-color: #A6E9D5;
+    background-color: rgb(255, 255, 255);
     display: inline-block;
     margin: 7px;
     border: solid white;
     border-radius: 20px;
-    text-align: center;
     padding: 8px;
+    cursor: pointer;
 }
-#instructions img{
+
+#instructions img {
     margin-bottom: 12px;
 }
-/* end main */
 
-/* start footer */
-footer{
+/* Footer styling */
+footer {
     width: 100%;
     height: 60px;
     position: fixed;
     bottom: 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
     background-color: #FFFF;
 }
-footer div{
+
+footer div {
     text-align: center;
     display: inline-block;
     margin: 10px 30px 0px 30px;
 }
-i{
+
+span {
     display: block;
 }
-span{
-    display: block;
 
-}
-/* end footer */
-
-/* page-menu main */
-#Arrowleft{
+/* Page-menu main styling */
+.Arrowleft {
     float: left;
-    margin-left: 20px;
-    margin-top: 6px;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 21px;
+    height: 24px;
+    transition: width 2s , height 2s , transform 2s;
 }
-#titlemenu{
+.Arrowleft:hover {
+    width: 25px;
+    height: 28px;
+    transform: rotate(360deg);
+}
+
+#titlemenu {
     position: absolute;
     margin-top: 36px;
     display: flex;
@@ -180,7 +282,8 @@ span{
     width: 100%;
     height: 29px;
 }
-#alljobs{
+
+#alljobs {
     border: solid 1px #20C997;
     background-color: #20C997;
     border-top-left-radius: 8px;
@@ -190,7 +293,8 @@ span{
     text-align: center;
     cursor: pointer;
 }
-#jobsforyou{
+
+#jobsforyou {
     border: solid 1px white;
     background-color: white;
     border-top-left-radius: 8px;
@@ -200,30 +304,36 @@ span{
     text-align: center;
     cursor: pointer;
 }
-#search{
+
+#search {
     position: absolute;
     margin-top: 80px;
     display: flex;
-    margin-left: 8px;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     text-align: center;
 }
-#searchjob{
+
+#searchjob {
     width: 75%;
     height: 28px;
     border: solid 1px white;
     border-radius: 32px;
-    background-color: white;    
+    background-color: white;
     text-align: center;
 }
-#logosearch{
+
+#logosearch {
     float: left;
     margin: 5px;
 }
-#searchajob{
+
+#searchajob {
     text-align: center;
     margin-top: 4px;
 }
+
 #filterjob {
     display: flex;
     flex-direction: column;
@@ -257,7 +367,7 @@ span{
     border-radius: 2px;
 }
 
-#listmenu{
+#listmenu {
     background-color: white;
     position: absolute;
     margin-top: 116px;
@@ -267,61 +377,79 @@ span{
     overflow-y: scroll;
     border-right: 1px solid #ccc;
 }
-.btndel{
+
+.btndel {
     float: right;
     margin-right: 15px;
     background-color: white;
-    border: solid 0px; 
+    border: solid 0px;
 }
-#listmenu li{
+
+#listmenu li {
     margin-bottom: 14px;
 }
-.btnarrowright{
+
+.btnarrowright {
     float: right;
     margin-right: 5px;
+    margin-left: 35px;
+    margin-top: 4px;
 }
-#addbutton{
+
+#addbutton {
     float: right;
     margin-left: 13px;
     margin-top: 5px;
 }
-#addjobs{
+
+#addjobs {
     display: none;
     text-align: left;
     margin: 5px 10px;
 }
-#addjobs h3{
+#addjobs div {
+    margin-bottom: 0.5%;
+}
+
+#addjobs h3 {
     font-size: 16px;
     font-weight: bold;
     font-family: Helvetica;
 }
-.fullname{
+
+.fullname {
     justify-content: space-between;
     margin-top: 10px;
 }
-input{
+
+input {
     border: solid 0px;
-    width: 100%;
-    height: 42px;
+    width: 99%;
+    height: 35px;
     text-align: center;
-    
+    justify-content: center;
 }
-.fullname input{
+
+.fullname input {
     border: solid 0px;
-    width: 160px;
-    height: 42px;
+    width: 49.15%;
+    height: 35px;
     display: inline-flex;
     text-align: center;
-    margin-right: 8px;
+    justify-content: center;
 }
-.typeworks{
-    display: block;
+
+.typeworks {
+    display: inline-block;
+    width: 99%;
+    text-align: left;
+}
+
+.typeworks h3 {
     width: 100%;
 }
-.typeworks h3{
-    width: 100%;
-}
-.typeworks span , .timework span{
+
+.typeworks span, .timework span {
     align-items: center;
     display: inline-flex;
     margin: 0px 7px;
@@ -329,25 +457,26 @@ input{
     font-size: 16px;
     font-family: Helvetica;
 }
-.typeworks input , .timework input{
+.timework{
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.typeworks input, .timework input {
     width: 15px;
 }
-.timework span{
-    margin: 0px 40px;
-}
-#btnsubmit{
+
+#btnsubmit {
+    margin-left: 25%;
+    width: 50%;
     background-color: #20C997;
     font-weight: bold;
     font-size: 14px;
     font-family: Helvetica;
 }
 
-/* end pagemenu main */
-
-/* Sidebar styles */
-#menuicon{
-    cursor: pointer;
-}
+/* Sidebar styling */
 #sidebar {
     height: 100%;
     width: 209px;
@@ -360,6 +489,7 @@ input{
     z-index: 1;
     display: none;
 }
+
 .headersidebar {
     background-color: #20C997;
     color: white;
@@ -369,19 +499,22 @@ input{
     width: 209px;
     height: 60px;
 }
-.headersidebar .searchicon{
+
+.headersidebar .searchicon {
     position: absolute;
     margin-left: 20px;
     color: #0a0b0c;
 }
-.headersidebar input{
+
+.headersidebar input {
     width: 153px;
     height: 22px;
     border: solid 0px;
     border-radius: 32px;
     margin-left: 10px;
 }
-.headersidebar #exit-icon{
+
+.headersidebar #exit-icon {
     margin-right: 8px;
 }
 
@@ -408,6 +541,7 @@ input{
     color: #888;
     font-size: 14px;
 }
+
 .sidebarmenu ul {
     list-style-type: none;
     padding: 0;
@@ -418,17 +552,17 @@ input{
 }
 
 .sidebarmenu ul li {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
-    align-items: center; 
-    margin-bottom: 5px; 
+    align-items: center;
+    margin-bottom: 5px;
     width: 193px;
 }
 
 .sidebarmenu ul li a {
     display: flex;
     align-items: center;
-    padding: 0; 
+    padding: 0;
     text-decoration: none;
     color: #333;
     transition: background-color 0.3s ease;
@@ -441,16 +575,18 @@ input{
     margin-right: 8px;
 }
 
-.sidebarmenu ul li a:hover{
+.sidebarmenu ul li a:hover {
     color: #20C997;
 }
-.homeicon{
+
+.homeicon {
     background-color: #A6E9D5;
     font-weight: bold;
     border-radius: 10px;
     float: left;
 }
-.footersidebarmenu{
+
+.footersidebarmenu {
     margin-top: 60px;
 }
 
@@ -459,263 +595,330 @@ input{
     font-size: 1rem;
     float: right;
 }
-
-#arrowleftIcon {
-    cursor: pointer;
-    font-size: 14px;
-    color: #000;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
+/* End of sidebar styling */
+/* Start jobsview styling */
+#includejobs{
+   position: absolute;
+   margin-top: 65px;
+   width: 100%;
 }
-
-#arrowleftIcon i {
-    margin-right: 8px;
-}
-.content p {
-    text-align: left;
-    font-weight: bold;
-    margin-top: 2px;
-}
-.tab-bar {
-    margin-top: 15px;
-    display: flex;
-    background-color: #fff;
-    border-radius: 0px 20px 20px 0px;
-}
-.tab {
-    flex: 1;
+#titlethejob{
+    width: 100%;
+    height: 40px;
+    background-color: #D2F4EA;
     text-align: center;
-    padding: 10px;
-    cursor: pointer;
-    color: #000;
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-.tab i {
-    margin-right: 8px;
-}
-.tab.active {
-    background-color: #A6E9D5;
-    color: #000;
+    align-items: center;
+    font-size: 16px;
+    font-family: Helvetica;
     font-weight: bold;
-    border-radius: 0px 20px 20px 0px;
+    color: #0a0b0c;
 }
-.content {
-    padding: 20px;
-}
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.photo-upload {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.photo-placeholder {
-    width: 190px;
-    height: 150px;
-    background-color: #e6e6e6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-}
-.photo-placeholder span {
-    position: absolute;
-    bottom: 10px;
+#timeago{
+    margin-left: 18px;
+    margin-top: 11px;
+    float: left;
     font-size: 14px;
-    color: #000;
+    font-family: Helvetica;
+    font-weight:normal;
+    color: #6C757D;
 }
-input {
-    padding: 10px;
-    border-radius: 10px;
-    width: 333px;
-    height: 32px;
-    margin: 0 auto;
-    box-sizing: border-box;
+#location-salary{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    font-size: 15px;
+    font-family: Helvetica;
+    font-weight: normal;
+    margin:44px 8px 0px 12px;
 }
-button.next-step {
+#positionoverview , #requirements{
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 18px 26px 8px ;
+    line-height: 1.3;
+    font-size: 15px;
+    font-family: Helvetica;
+    font-weight: normal;
+}
+#positionoverview h2 , #requirements h2{
+    margin-bottom: 13px;
+    font-size: 14px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: #0a0b0c;
+}
+#sendcv button{
+    cursor: pointer;
     width: 120px;
     height: 32px;
-    margin: 0 auto;
-    padding: 10px;
-    background-color: #A6E9D5;
-    color: #000;
-    border: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
+    transition: box-shadow 0.3s ease;
+    border: 0px;
+    font-size: 14px;
+    font-family: Helvetica;
+    font-weight: bold;
     border-radius: 3px;
-    cursor: pointer;
-    font-weight: bold;
+    padding: 0px 10px;
+    background-color: #D2F4EA;
+    float: right;
+    margin: 0px 30px 12px 0px;
 }
-button.next-step:hover {
-    color: #45a049;
-}
-.error-message {
-    color: red;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 5px;
-}
-/* createCVNextpage css*/
-main .sections {
-    margin-top: 20px;
-}
-
-main .sections .section {
-    margin-bottom: 40px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-main .sections .section:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-main .sections .section h2 {
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    color: #000;
-}
-
-main .sections .section h2 i {
-    margin-right: 10px;
-}
-
-main .sections .section .fas.fa-chevron-down {
-    margin-left: auto;
-}
-
-main .sections .section .content-section {
-    display: none;
-    flex-direction: column;
-    width: 95%;
-    margin-top: 10px;
-    padding-top: 10px;
-}
-main .sections .section .content-section textarea {
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-.save-button {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-}
-.save-button button {
-    padding: 10px 20px;
-    background-color: #A6E9D5;
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-.save-button button:hover {
-    background-color: #60cc608c;
-    color: #000;
-}
-/*end*/
-.makecv-link {
-    text-decoration: none;
-    color: inherit;
-}
-.no-underline {
-    text-decoration: none;
-}
-/*template page*/
-.arrows {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.cv-wrapper {
-    width: 267px;
-    height: 337px;
-    overflow: hidden;
-    background-color: #FFFF;
-}
-
-.cv-page {
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    height: 100%;
-}
-
-.cv-content {
-    font-size: 12px;
-    line-height: 1.5;
-    overflow-y: auto;
-    height: calc(100% - 40px); /* Adjust based on padding */
-}
-
-.profile-picture img {
-    border-radius: 50%;
-    max-width: 100px;
-}
-
-.contact-info {
-    margin-bottom: 15px;
-}
-
-.cv-content h1,
-.cv-content h2,
-.cv-content h3,
-.cv-content h4,
-.cv-content h5,
-.cv-content h6 {
-    margin-bottom: 10px;
-}
-
-.cv-content ul {
-    padding-left: 20px;
-}
-
-.cv-content p,
-.cv-content ul {
-    margin-bottom: 10px;
-}
-
-.arrow {
-    text-decoration: none;
-    color: #333;
-    font-size: 24px;
-}
-
-.use-template {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.use-template button {
-    background-color: #A6E9D5;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.use-template button:hover {
+#sendcv button:hover {
     background-color: #0056b3;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.35);
+}
+
+.trash-box {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    float: right;
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .trash-box:hover .trash-top {
+    transform: translate(-50%, -15%) rotate(-20deg); /* open the lid */
+  }
+  
+  .trash-box:hover .trash-btm {
+    transform: translate(-50%, -100%) rotate(5deg); /* rotate the bottom a little */
+  }
+  
+  .trash-box:hover .trash {
+    top: 50%;
+    transform: translate(-42%, -50%) rotate(35deg); /* comes from bottom */
+  }
+  
+  .trash-box .trash-top {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    width: 80%;
+    height: 15%;
+    background: #000000;
+    border-radius: 5px;
+    transform-origin: left bottom;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .trash-box .trash-top::before {
+    content: "";
+    position: absolute;
+    bottom: 95%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 30%;
+    height: 80%;
+    background: inherit;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .trash-box .trash-btm {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 70%;
+    height: 65%;
+    background: #000000;
+    border-radius: 5px;
+    transform-origin: left 70%; 
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .trash-box .trash-btm .trash-lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around; 
+  }
+  
+  .trash-box .trash-btm .trash-lines .trash-line {
+    width: 20%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 3px;
+  }
+  
+  .trash-box .trash {
+    position: absolute;
+    top: 80%;
+    left: 38%;
+    transform: translate(-38%, -80%) rotate(35deg);
+    width: 40%;
+    height: 40%;
+    background: #000000;
+    border-radius: 2px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .trash-box .trash::before {
+    position: absolute;
+    transform: translate(30%, -20%) rotate(25deg);
+    width: 100%;
+    height: 100%;
+    background: #c6e9f1; 
+    border-radius: 2px;
+  }
+  
+/*start modal-content in menupage styling*/
+#successModal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 0px;
+    border: 1px solid #888;
+    width: 70%;
+    height: 25%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    margin-right: 18px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 0px solid #888;
+    border-radius: 10px;
+    width: 285px;
+    height: 212px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 15%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .circle-check {
+    background-color: #4CAF50;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  
+  .circle-check i {
+    color: white;
+    font-size: 32px;
+  }
+  
+  .modal-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .modal-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .modal-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 120px;
+    height: 32px;
+    border-radius: 5px;
+  }
+  
+  .modal-button:hover {
+    background-color: #45a049;
+  }
+  
+  
+
+@media  screen and (min-width: 640px) {
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        padding: 0;
+        margin:0;
+    }
+    #jobs {
+        width: 100%;
+        height: 160px;
+        margin-top: 50px;
+    }
+    p {
+        text-align: center;
+        margin: 30px;
+        font-size: 22px;
+    }
+    menu{
+        height: 183px;
+    }
+    #instructions div {
+        width: 81px;
+        height: 77px;
+        background-color: white;
+        display: inline-block;
+        margin: 7px 25px;
+        border: solid white;
+        border-radius: 20px;
+        padding: 8px;
+    }
 }
