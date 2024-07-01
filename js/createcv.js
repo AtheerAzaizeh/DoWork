@@ -134,7 +134,7 @@ function loadStoredData() {
     if (storedLocation) document.getElementById("locationInput").value = storedLocation;
     if (storedPhone) document.getElementById("phoneNumber").value = storedPhone;
 }
-saveToLocalStorage("name", name);
+     saveToLocalStorage("name", name);
     saveToLocalStorage("email", email);
     saveToLocalStorage("location", location);
     saveToLocalStorage("phoneNumber", phoneNumber);
