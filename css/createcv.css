@@ -313,6 +313,7 @@ main .sections .section .content-section textarea {
     line-height: 1.5;
     overflow-y: auto;
     height: calc(100% - 40px);
+    text-align: center;
 }
 
 .profile-picture img {
@@ -329,10 +330,12 @@ main .sections .section .content-section textarea {
     margin-bottom: 10px;
     color: #1AA179;
     font-style: italic;
+    text-align: center;
 }
 .cv-content p,
 .cv-content ul {
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .arrow-left {
