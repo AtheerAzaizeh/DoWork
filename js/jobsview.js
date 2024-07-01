@@ -1,12 +1,19 @@
 import { CreateElements } from './CreateElements.js';
 import { JobService } from './JobService.js';
+import { showMessage } from './JobFormHandler.js';
 
+function getRandomValue(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min + '$/hour';
+}
 document.addEventListener('DOMContentLoaded', () => {
-
     const jobService = new JobService();
     const createElement = new CreateElements();
     jobService.loadFromLocalStorage();
     const selectedJob = JSON.parse(localStorage.getItem('selectedJob')) ;
+    
+    if(selectedJob.salary === undefined){
+      selectedJob.salary = getRandomValue(50 , 250);
+    }
 
     addelemntdeletebutton();
     if (selectedJob) {
@@ -44,7 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sendcv.addEventListener('click', () => {
        showmodal.style.display = 'block';
-        sendcv.firstChild.textContent = 'Sent';
+       sendcv.firstChild.style.backgroundColor ='#0056b3';
+       sendcv.firstChild.textContent = 'Sent';
+       sendcv.firstChild.style.pointerEvents = 'none';
     });
 
     window.addEventListener('click', (event) => {
@@ -67,12 +76,18 @@ document.addEventListener('DOMContentLoaded', () => {
           if(jobService.allJobs[i].title === selectedJob.title){
             jobService.allJobs = jobService.allJobs.filter(job => job.id !== selectedJob.id);
             jobService.saveToLocalStorage();
+            console.log( selectedJob.title,'Job deleted successfully');
+            showMessage('Plaease Waiting...' , 'red');
+            setTimeout(() => {history.back(); showMessage('Job deleted successfully' , 'green');}, 2000);
           }
         }
         for (let i = 0; i < jobService.jobsForYou.length; i++) {
           if(jobService.jobsForYou[i].title === selectedJob.title){
             jobService.jobsForYou = jobService.jobsForYou.filter(job => job.id !== selectedJob.id);
             jobService.saveToLocalStorage();
+            console.log( selectedJob.title , "it's deleted successfully");
+            showMessage('Plaease Waiting...' , 'red');
+            setTimeout(() => {history.back(); showMessage('Job deleted successfully' , 'green');}, 2000);
           }
         }
     });
