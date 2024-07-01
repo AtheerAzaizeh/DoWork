@@ -574,22 +574,18 @@ input {
     width: 29px;
     margin-right: 8px;
 }
-
 .sidebarmenu ul li a:hover {
     color: #20C997;
 }
-
 .homeicon {
     background-color: #A6E9D5;
     font-weight: bold;
     border-radius: 10px;
     float: left;
 }
-
 .footersidebarmenu {
     margin-top: 60px;
 }
-
 #exit-icon {
     cursor: pointer;
     font-size: 1rem;
