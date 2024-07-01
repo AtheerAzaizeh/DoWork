@@ -13,3 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
       sidebar.style.display = 'none';
   }
 });
+document.getElementById("makecv").addEventListener("click", function() {
+  window.location.href = "CreateCVpage.html";
+});
