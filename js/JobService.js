@@ -1,5 +1,4 @@
 import { CreateElements } from './CreateElements.js';
-
 export class JobService {
   constructor() {
     this.allJobs = [];
@@ -21,8 +20,6 @@ export class JobService {
       console.error('Error fetching jobs:', error);
     }
   }
-
-  // Save data to Local Storage
   saveToLocalStorage() {
     localStorage.setItem('allJobs', JSON.stringify(this.allJobs));
     localStorage.setItem('jobsForYou', JSON.stringify(this.jobsForYou));
@@ -54,25 +51,22 @@ export class JobService {
       console.error('Invalid collection name');
     }
   }
-
-  // Get a job by its ID
   getJobById(id) {
     return [...this.allJobs, ...this.jobsForYou].find(job => job.id === id);
   }
-
-  // Delete a job from a specific collection
   deleteJob(jobId, list) {
     if (list.id === 'alljobsmenu') {
       this.allJobs = this.allJobs.filter(job => job.id !== jobId);
       this.saveToLocalStorage();
       this.renderJobs(this[list.id === 'alljobsmenu' ? 'allJobs' : 'jobsForYou'], list);
+      console.log('Job deleted successfully');
 
-    } else if (list.id === 'jobsforyoumenu') {
+    }else if (list.id === 'jobsforyoumenu') {
       this.jobsForYou = this.jobsForYou.filter(job => job.id !== jobId);
       this.saveToLocalStorage();
       this.renderJobs(this[list.id === 'alljobsmenu' ? 'allJobs' : 'jobsForYou'], list);
-
-    } 
+      console.log('Job deleted successfully');
+    }
     else{
       console.error('Invalid list ID');
       return;

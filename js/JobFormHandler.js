@@ -3,9 +3,6 @@ export class JobFormHandler {
     this.jobService = jobService;
     this.successModal = document.getElementById('successModal');
     this.closeModalButton = this.successModal.querySelector('.close');
-    this.messageContainer = document.createElement('div');
-    this.messageContainer.id = 'messageContainer';
-    document.body.appendChild(this.messageContainer);
   }
 
   getFormData() {
@@ -81,27 +78,8 @@ export class JobFormHandler {
       });
       document.getElementById('successModal').style.display = 'none';
       addJobsSection.style.display = 'none';
-      this.showMessage('Job added successfully');
+      showMessage('Job added successfully' , 'green');
     }
-  }
-
-  showMessage(message) {
-    this.messageContainer.innerText = message;
-    this.messageContainer.style.display = 'block';
-    this.messageContainer.style.position = 'fixed';
-    this.messageContainer.style.top = '0';
-    this.messageContainer.style.left = '50%';
-    this.messageContainer.style.transform = 'translateX(-50%)';
-    this.messageContainer.style.backgroundColor = '#4CAF50';
-    this.messageContainer.style.color = 'white';
-    this.messageContainer.style.padding = '10px';
-    this.messageContainer.style.zIndex = '1000';
-    this.messageContainer.style.borderRadius = '5px';
-    this.messageContainer.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
-
-    setTimeout(() => {
-      this.messageContainer.style.display = 'none';
-    }, 2000);
   }
   
   showSuccessModal() {
@@ -120,4 +98,26 @@ export class JobFormHandler {
       }
     });
   }
+}
+
+export function showMessage(message , color) {
+  const messageContainer = document.createElement('div');
+  messageContainer.id = 'messageContainer'; 
+  document.body.appendChild(messageContainer);
+  messageContainer.innerText = message;
+  messageContainer.style.display = 'block';
+  messageContainer.style.position = 'fixed';
+  messageContainer.style.top = '0';
+  messageContainer.style.left = '50%';
+  messageContainer.style.transform = 'translateX(-50%)';
+  messageContainer.style.backgroundColor = color;
+  messageContainer.style.color = 'white';
+  messageContainer.style.padding = '10px';
+  messageContainer.style.zIndex = '1000';
+  messageContainer.style.borderRadius = '5px';
+  messageContainer.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
+
+  setTimeout(() => {
+    messageContainer.style.display = 'none';
+  }, 2000);
 }
