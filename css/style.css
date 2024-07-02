@@ -593,6 +593,8 @@ input {
 }
 /* End of sidebar styling */
 /* Start jobsview styling */
+
+/* Styling section includejobs */
 #includejobs{
    position: absolute;
    margin-top: 65px;
@@ -666,7 +668,7 @@ input {
     background-color: #0056b3;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.35);
 }
-
+/* start of trash icon styling */
 .trash-box {
     cursor: pointer;
     width: 20px;
@@ -806,6 +808,7 @@ input {
     cursor: pointer;
   }
 
+  /* start of modal styling in jobsview page */
   #modal {
     display: none;
     position: fixed;
@@ -883,8 +886,7 @@ input {
     background-color: #45a049;
   }
   
-  
-
+/* styling for media screen */
 @media  screen and (min-width: 640px) {
     *{
         padding: 0;
