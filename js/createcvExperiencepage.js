@@ -27,7 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            console.log('Saved Data for section:', section.id, textarea);
+            const sectionId = section.id;
+            localStorage.setItem(sectionId, textarea); // Save data to local storage
+
+            console.log('Saved Data for section:', sectionId, textarea);
 
             section.querySelector('.content-section').style.display = 'none';
 
@@ -55,8 +58,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         if (allSectionsFilled) {
-
             window.location.href = 'createcvTemplatepage.html';
+        }
+    });
+
+    // Load data from local storage when the page loads
+    sections.forEach(section => {
+        const sectionId = section.id;
+        const storedData = localStorage.getItem(sectionId);
+
+        if (storedData) {
+            section.querySelector('textarea').value = storedData;
         }
     });
 });
