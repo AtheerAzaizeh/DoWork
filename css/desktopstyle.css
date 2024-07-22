@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 110px;
+
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.logo img {
+    width: 113px;
+    position: absolute;
+    top: 0;
+}
+
+@media (max-width: 600px) {
+    #logo {
+        width: 100px;
+    }
+}
+
+.search-bar input {
+    padding: 10px;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    width: 285px;
+    height: 32px;
+    margin-top: 12px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 55px;
+    margin-top: 12px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2125296f;
+}
+nav ul li a.active {
+    font-weight: bold;
+    color: #000;
+}
+
+nav ul li a:hover {
+    color: #000;
+    font-weight: bold;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.profile .alert-icon {
+    font-size: 20px;
+    width: 24px;
+    height: 24px;
+    color: #212529;
+}
+
+.profile img {
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.profile span {
+    font-size: 14px;
+    font-family: abhaya libre;
+}
+
+.profile .arrow-down {
+    margin-left: 1px;
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+main .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-message h1 {
+    margin: 0;
+    font-family: aleo;
+    font-size: 30px;
+}
+
+.welcome-message p {
+    margin: 5px 0 20px 0;
+    font-family: aleo;
+    font-size: 30px;
+}
+
+.search-help-reports {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.search-help {
+    width: 427px;
+    height: 40px;
+}
+
+.search-help input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+}
+
+.reports {
+    background-color: #ffffff7c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 461px;
+    height: 249px;
+    text-align: center;
+    position: relative;
+    top: -80px;
+}
+
+.reports h2 {
+    margin: 0 0 20px 0;
+    font-size: 26px;
+    font-family: aleo;
+    font-weight: bold;
+}
+
+.reports-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 36px;
+}
+
+.reports button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a6e9d5;
+    color: #000;
+    cursor: pointer;
+    font-family: aleo;
+}
+.reports button:hover {
+    background-color: #4db6ac;
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
+.categories-heading {
+    font-size: 30px;
+    font-family: aleo;
+    margin-bottom: 20px;
+    margin-top: -110px; 
+    font-weight: bold;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    max-width: 800px;
+}
+
+.category {
+    text-align: center;
+    background-color: #a6e9d5;
+    padding: 20px;
+    border-radius: 10px;
+    width: 188px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.category img {
+    width: 168px;
+    height: 130px;
+    margin-bottom: 10px;
+}
+
+.category p {
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+    font-family: aleo;
+}
+
+.category:hover {
+    background-color: #b2dfdb;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #f8f9fa;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+footer .social-media a,
+footer .app-links a {
+    font-size: 24px;
+    color: #000;
+    margin-right: 10px;
+}
