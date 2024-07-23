@@ -1,0 +1,114 @@
+{
+    "workers": [
+        {
+            "name": "Chris Whitener",
+            "age": 28,
+            "occupation": "QA Tester",
+            "experience": 1.5,
+            "location": "Haifa",
+            "percentage": 80,
+            "image": "images/chris.png",
+            "cv": "docs/chrisCV.pdf"
+        },
+        {
+            "name": "Jessica Koel",
+            "age": 27,
+            "occupation": "QA Tester",
+            "experience": 1,
+            "location": "Rishon Lezion",
+            "percentage": 75,
+            "image": "images/jessica.png"
+        },
+        {
+            "name": "Alex Pierce",
+            "age": 30,
+            "occupation": "QA Tester",
+            "experience": 2,
+            "location": "Tel Aviv",
+            "percentage": 89,
+            "image": "images/alex.png"
+        },
+        {
+            "name": "Patrick Martens",
+            "age": 35,
+            "occupation": "QA Tester",
+            "experience": 5,
+            "location": "Ramat Gan",
+            "percentage": 84,
+            "image": "images/patrick.png"
+        },
+        {
+            "name": "Aurly Dahan",
+            "age": 30,
+            "occupation": "QA Tester",
+            "experience": 5,
+            "location": "Petah Tikva",
+            "percentage": 99,
+            "image": "images/aurly.png"
+        },
+        {
+            "name": "Cleo Peters",
+            "age": 32,
+            "occupation": "QA Tester",
+            "experience": 4,
+            "location": "Herzliya",
+            "percentage": 78,
+            "image": "images/cleo.png"
+        },
+        {
+            "name": "Daniel Brown",
+            "age": 29,
+            "occupation": "QA Tester",
+            "experience": 3,
+            "location": "Jerusalem",
+            "percentage": 77,
+            "image": "images/daniel.png"
+        },
+        {
+            "name": "Samantha Lee",
+            "age": 26,
+            "occupation": "QA Tester",
+            "experience": 2,
+            "location": "Netanya",
+            "percentage": 78,
+            "image": "images/samantha.png"
+        },
+        {
+            "name": "Michael Thompson",
+            "age": 31,
+            "occupation": "QA Tester",
+            "experience": 4,
+            "location": "Ashdod",
+            "percentage": 88,
+            "image": "images/michael.png"
+        },
+        {
+            "name": "Olivia Kim",
+            "age": 29,
+            "occupation": "QA Tester",
+            "experience": 3,
+            "location": "Be'er Sheva",
+            "percentage": 85,
+            "image": "images/olivia.png"
+        },
+        {
+            "name": "Ryan Lewis",
+            "age": 34,
+            "occupation": "QA Tester",
+            "experience": 6,
+            "location": "Kfar Saba",
+            "percentage": 85,
+            "image": "images/ryan.png"
+        },
+        {
+            "name": "Emily Carter",
+            "age": 28,
+            "occupation": "QA Tester",
+            "experience": 2.5,
+            "location": "Modiin",
+            "percentage": 55,
+            "image": "images/Emily.png"
+        }
+
+    ]
+}
