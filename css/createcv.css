@@ -45,6 +45,9 @@ header {
     margin-top: 15px;
     padding: 5px;
 }
+#arrowleftIcon {
+    text-decoration: none;
+}
 
 #arrow {
     width: 0;
