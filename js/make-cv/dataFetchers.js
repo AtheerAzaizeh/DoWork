@@ -46,7 +46,7 @@ export function fetchCities() {
     const selectedCountry = countrySelect.value;
     universitySelect.innerHTML = '';
 
-    fetch(`/api/universities/search?country=${encodeURIComponent(selectedCountry)}`)
+    fetch(`https://onlybackend-wgcr.onrender.com/api/universities/search?country=${encodeURIComponent(selectedCountry)}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
