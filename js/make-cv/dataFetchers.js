@@ -47,17 +47,24 @@ export function fetchCities() {
         universitySelect.innerHTML = '';
   
    
-        fetch(`/api/universities?country=${selectedCountry}`)
-        .then(response => response.json())
-        .then(universities => {
-            universities.forEach(university => {
-                const option = document.createElement('option');
-                option.value = university.name;
-                option.textContent = university.name;
-                universitySelect.appendChild(option);
-            });
-        })
-        .catch(error => console.error('Error fetching universities:', error.message));
-});
-  }
+    fetch(`/api/universities?country=${encodeURIComponent(selectedCountry)}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(universities => {
+        universities.forEach(university => {
+          const option = document.createElement('option');
+          option.value = university.name;
+          option.textContent = university.name;
+          universitySelect.appendChild(option);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching universities:', error);
+      });
+  });
+}
   
