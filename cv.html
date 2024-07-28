@@ -9,12 +9,12 @@
 </head>
 <body>
     <header>
-        <a href="index.html" id="arrowleftIcon">
+        <a href="homepage.html" id="arrowleftIcon">
             <i class="fas fa-arrow-left"></i>
             Make your CV
         </a>
         <div id="logo"><img src="images/logo.png" width="104" height="89" alt="Logo"></div>
-        <div id="pictureprofile">      
+        <div id="pictureprofile">
             <nav id="arrow-down"><div id="arrow"></div></nav>
             <img src="images/aurlynewpicture.png" width="40" height="40" alt="Profile Picture">
             <div id="online"></div>
@@ -34,50 +34,52 @@
         <div class="content">
             <div class="form">
                 <div class="photo-upload">
-                    <div id="profile_image_url" class="profile_image_url" onclick="openPhotoInput()">
+                    <div id="profile_image_url" class="profile_image_url">
                         <i class="fas fa-camera"></i>
                         <span>Add Photo</span>
                     </div>
-                    <input type="file" id="photoInput" style="display:none;" onchange="displaySelectedPhoto(this)">
+                    <input type="file" id="photoInput" style="display:none;" >
                 </div>
-                <form id="cv-form">
+                <form id="cv-form" action="/api/cvs" method="post" enctype="multipart/form-data">
+                    <!-- Personal Details Section -->
                     <h2>
                         Personal Details
-                        <button type="button" onclick="toggleSection('personal-details-section')">▼</button>
+                        <button type="button" id="arrow-down" data-section="personal-details-section" >▼</button>
                     </h2>
                     <div id="personal-details-section" style="display: none;">
                         <input type="hidden" id="user_id" value="user_id">
                         <label for="first_name">First Name:</label>
-                        <input type="text" id="first_name" required>
+                        <input type="text" id="first_name" name="first_name" required>
                         <label for="last_name">Last Name:</label>
-                        <input type="text" id="last_name" required>
+                        <input type="text" id="last_name" name="last_name" required>
                         <label for="date_of_birth">Date of Birth:</label>
-                        <input type="date" id="date_of_birth" required>
+                        <input type="date" id="date_of_birth" name="date_of_birth" required>
                         <label for="location">Location:</label>
-                        <select id="location" required></select>
+                        <select id="location" name="location" required></select>
                         <label for="phone_number">Phone Number:</label>
-                        <input type="text" id="phone_number" required>
-                        <button type="button" onclick="saveSection('personal_details', 'education-section')">Save</button>
+                        <input type="text" id="phone_number" name="phone_number" required>
+                        <button type="button" data-current-section="personal_details-section" data-next-section="education-section">Save</button>
                     </div>
 
+                    <!-- Education Section -->
                     <h2>
                         Education
-                        <button type="button" onclick="toggleSection('education-section')">▼</button>
+                        <button type="button" id="arrow-down" data-section="education-section">▼</button>
                     </h2>
                     <div id="education-section" style="display: none;">
-                        <label for="country">Country:</label>
+                        <label for="country">Country Of Study:</label>
                         <select id="country" name="country" required></select><br>
                         <label for="institution_name">Institution Name:</label>
                         <select id="institution_name" name="institution_name" required></select><br>
                         <label for="degree">Degree:</label>
-                        <select id="degree" required>
+                        <select id="degree" name="degree" required>
                             <option value="bachelor">Bachelor</option>
                             <option value="master">Master</option>
                             <option value="doctorate">Doctorate</option>
                             <option value="diploma">Diploma</option>
                         </select>
                         <label for="field_of_study">Field of Study:</label>
-                        <select id="field_of_study" required>
+                        <select id="field_of_study" name="field_of_study" required>
                             <option value="computer science">Computer Science</option>
                             <option value="engineering">Engineering</option>
                             <option value="business">Business</option>
@@ -88,31 +90,32 @@
                             <option value="other">Other</option>
                         </select>
                         <label for="start_date">Start Date:</label>
-                        <input type="date" id="start_date" required>
+                        <input type="date" id="start_date" name="start_date" required>
                         <label for="end_date">End Date:</label>
-                        <input type="date" id="end_date" required>
-                        <button type="button" onclick="saveSection('education', 'experience-section')">Save</button>
+                        <input type="date" id="end_date" name="end_date" required>
+                        <button type="button" data-current-section="education-section" data-next-section="work-experience-section">Save</button>
                     </div>
 
+                    <!-- Work Experience Section -->
                     <h2>
                         Work Experience
-                        <button type="button" onclick="toggleSection('work-experience-section')">▼</button>
+                        <button type="button" id="arrow-down" data-section="work-experience-section">▼</button>
                     </h2>
                     <div id="work-experience-section" style="display: none;">
                         <label for="company_name">Company Name:</label>
-                        <input type="text" id="company_name" required>
+                        <input type="text" id="company_name" name="company_name" required>
                         <label for="job_title">Job Title:</label>
-                        <input type="text" id="job_title" required>
+                        <input type="text" id="job_title" name="job_title" required>
                         <label for="start_date_work">Start Date:</label>
-                        <input type="date" id="start_date_work" required>
+                        <input type="date" id="start_date_work" name="start_date_work" required>
                         <label for="end_date_work">End Date:</label>
-                        <input type="date" id="end_date_work" required>
+                        <input type="date" id="end_date_work" name="end_date_work" required>
                         <label for="skills">Skills:</label>
-                        <textarea id="skills" required></textarea>
-                        <button type="button" onclick="saveSection('work_experience', 'none')">Save</button>
+                        <textarea id="skills" name="skills" required></textarea>
+                        <button type="button" data-current-section="work_experience-section" data-next-section="next-step">Save</button>
                     </div>
 
-                    <button type="button" id="next-step" style="display: none;" onclick="submitCV()">Next Step</button>
+                    <button type="button" id='next-step' data-current-section="next-step" style="display: none;">Next Step</button>
                 </form>
                 <p id="cv-error" style="color: red;"></p>
             </div>
