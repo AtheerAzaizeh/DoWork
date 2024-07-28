@@ -19,7 +19,7 @@ export function fetchCities() {
                 });
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error.message));
   }
   
   export function fetchCountries() {
@@ -35,7 +35,7 @@ export function fetchCities() {
                 countrySelect.appendChild(option);
             });
         })
-        .catch(error => console.error('Error fetching countries:', error));
+        .catch(error => console.error('Error fetching countries:', error.message));
   }
   
   export function fetchUniversities() {
@@ -46,17 +46,18 @@ export function fetchCities() {
         const selectedCountry = countrySelect.value;
         universitySelect.innerHTML = '';
   
-        fetch(`http://universities.hipolabs.com/search?country=${selectedCountry}`)
-            .then(response => response.json())
-            .then(universities => {
-                universities.forEach(university => {
-                    const option = document.createElement('option');
-                    option.value = university.name;
-                    option.textContent = university.name;
-                    universitySelect.appendChild(option);
-                });
-            })
-            .catch(error => console.error('Error fetching universities:', error));
-    });
+   
+        fetch(`/api/universities?country=${selectedCountry}`)
+        .then(response => response.json())
+        .then(universities => {
+            universities.forEach(university => {
+                const option = document.createElement('option');
+                option.value = university.name;
+                option.textContent = university.name;
+                universitySelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching universities:', error.message));
+});
   }
   
