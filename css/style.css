@@ -248,10 +248,11 @@ li a {
     min-width: calc(81px - 2 * 8px);
     padding: 8px;
 }
-
-.instructions img {
-    margin-top: 12px;
+.instructions a {
+    text-decoration: none;
+    color: inherit;
 }
+
 
 /* Footer styling */
 /* Footer Section */
