@@ -1,6 +1,6 @@
 
     document.addEventListener("DOMContentLoaded", function() {
-        fetch('locations.json')
+        fetch('data/locations.json')
             .then(response => response.json())
             .then(data => {
                 const locationSelect = document.getElementById('location');
@@ -16,4 +16,5 @@
             })
             .catch(error => console.error('Error fetching locations:', error));
     });
+
 

@@ -1,6 +1,7 @@
 import { CreateElements } from './CreateElements.js';
 import { JobService } from './JobService.js';
 import { showMessage } from './JobFormHandler.js';
+import { fetchJobs} from './Jobsview/all-jobsview.js';
 
 const showmodal = document.getElementById('modal');
 const buttonok = document.getElementById('modalOkButton');
@@ -91,4 +92,5 @@ document.getElementById('arrowleft').addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     showJob();
+    fetchJobs();
 });
