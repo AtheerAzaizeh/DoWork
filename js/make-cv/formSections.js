@@ -87,7 +87,7 @@ export function toggleSection(sectionId) {
     };
   
     try {
-        const response = await fetch('http://localhost:3000/api/cvs', {
+        const response = await fetch('https://onlybackend-wgcr.onrender.com/api/cvs', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
