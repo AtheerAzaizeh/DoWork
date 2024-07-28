@@ -8,48 +8,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300;400;700&display=swap" rel="stylesheet">   
     <script src="js/sidebarmenu.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <header>
         <nav class="menu">
-            <div id="menuicon">
+            <div class="menu-icon">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
-        </nav>
-        <div id="logo" onclick="location.href='index.html'"><img src="images/logo.png" width="104" height="89" alt="Logo"></div>
-        <div id="pictureprofile">      
-            <nav id="arrow-down"><div id="arrow"></div></nav>
+        </nav>        
+        <div class="logo" onclick="location.href='index.html'"><img src="images/logo.png" width="104" height="89" alt="Logo"></div>
+        <div class="pictureprofile">      
+            <nav class="arrow-down"><div class="arrow"></div></nav>
             <img src="images/aurly.png" width="40" height="40" alt="Profile Picture">
-            <div id="online"></div>
-        </div>
+            <div class="online"></div>
+        </div>              
     </header>
     <main id="menupage">
         <section class="Arrowleft" aria-hidden="true"><h2 style="display:none;">Navigation Arrow</h2>
             <i id="arrowleft" class="fa-solid fa-arrow-left" style="font-size: 24px; cursor: pointer;"></i>
         </section>
-        <section id="titlemenu" aria-hidden="true"><h2 style="display:none;">Job Menu Titles</h2>
-            <div id="alljobs">All jobs</div>
-            <div id="jobsforyou">Jobs For You</div>
+        <section class="titlemenu" aria-hidden="true"><h2 style="display:none;">Job Menu Titles</h2>
+            <div class="alljobs">All jobs</div>
+            <div class="jobsforyou">Jobs For You</div>
         </section>
-        <section id="search" aria-hidden="true"><h2 style="display:none;">Search Section</h2>
-            <div id="searchjob" style="cursor: pointer;">
-                <div id="logosearch"><i class="fa-solid fa-magnifying-glass"></i></div>
-                <div id="searchajob">Search job</div>
+        <section class="search" aria-hidden="true"><h2 style="display:none;">Search Section</h2>
+            <div class="searchjob" style="cursor: pointer;">
+                <div class="logosearch"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div class="searchajob">Search job</div>
             </div>
-            <div id="filterjob">           
+            <div class="filterjob">           
                 <div class="bar01"></div>
                 <div class="bar02"></div>
                 <div class="bar03"></div>
             </div>
-            <div id="addbutton"><i class="fa-solid fa-plus" style="cursor: pointer;"></i></div>
+            <div class="addbutton"><i class="fa-solid fa-plus" style="cursor: pointer;"></i></div>
         </section>
-        <section id="listmenu" aria-hidden="true"><h2 style="display:none;">Job Listings</h2>
+        <section class="listmenu" aria-hidden="true"><h2 style="display:none;">Job Listings</h2>
             <ul id="alljobsmenu"></ul>
             <ul id="jobsforyoumenu"></ul>
         </section>
-        <section id="addjobs" aria-hidden="true"><h2 style="display:none;">Add Jobs Form</h2>
+        <section class="addjobs" aria-hidden="true"><h2 style="display:none;">Add Jobs Form</h2>
             <form id="addjobsForm" method="post" action="/submit-jobs">
                 <div>
                     <i id="Arrowleft" style="cursor: pointer; font-size: 24px;" class="fa-solid fa-arrow-left"></i>
@@ -96,22 +97,22 @@
                     <span><input type="checkbox" class="cb-times" name="timework" value="Part Time" id="parttime">Part Time</span>
                 </div>
                 <div id="submit">
-                    <input type="submit" value="Submit" id="btnsubmit">
+                    <button class="btnsubmit">Submit</button>
                 </div>
             </form>
         </section>
-        <section id="successModal" aria-hidden="true"><h2 style="display:none;">Success Modal</h2>
+        <section class="successModal" aria-hidden="true"><h2 style="display:none;">Success Modal</h2>
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <p>Please wait a moment..</p>
                 <i class="fa-brands fa-searchengin" style="font-size: 49px;"></i>
             </div>
         </section>
-        <section id="sidebar" aria-hidden="true"><h2 style="display:none;">Sidebar</h2>
+        <section class="sidebar" aria-hidden="true"><h2 style="display:none;">Sidebar</h2>
             <div class="headersidebar">
                 <i class="searchicon fa-solid fa-magnifying-glass"></i>
                 <input type="search" placeholder="Search">
-                <span id="exit-icon">&#x2716;</span>
+                <span class="exit-icon">&#x2716;</span>
             </div>
             <div class="profile">
                 <img src="images/aurly.png" width="59" height="59" alt="Profile Picture" class="profile-img">
