@@ -1,18 +1,33 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const sidebar = document.getElementById('sidebar');
-  const menuicon = document.getElementById('menuicon');
-  const exiticon = document.getElementById('exit-icon');
+  const sidebar = document.querySelector('.sidebar');
+  const menuIcon = document.querySelector('.menu-icon');
+  const exitIcon = document.querySelector('.exit-icon');
 
-  menuicon.addEventListener('click' , OpenSidebar);
-  exiticon.addEventListener('click' , CloseSidebar);
+  if (menuIcon) {
+    menuIcon.addEventListener('click', function() {
+      console.log('Menu icon clicked');
+      openSidebar();
+    });
+  }
 
-  function OpenSidebar(){
+  if (exitIcon) {
+    exitIcon.addEventListener('click', function() {
+      console.log('Exit icon clicked');
+      closeSidebar();
+    });
+  }
+
+  function openSidebar() {
+    if (sidebar) {
       sidebar.style.display = 'block';
+    }
   }
-  function CloseSidebar(){
+
+  function closeSidebar() {
+    if (sidebar) {
       sidebar.style.display = 'none';
+    }
   }
 });
-document.getElementById("makecv").addEventListener("click", function() {
-  window.location.href = "CreateCVpage.html";
-});
+
+
