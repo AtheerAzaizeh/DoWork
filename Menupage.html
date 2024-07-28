@@ -52,64 +52,6 @@
             <ul id="alljobsmenu"></ul>
             <ul id="jobsforyoumenu"></ul>
         </section>
-        <section class="addjobs" aria-hidden="true"><h2 style="display:none;">Add Jobs Form</h2>
-            <form id="addjobsForm" method="post" action="/submit-jobs">
-                <div>
-                    <i id="Arrowleft" style="cursor: pointer; font-size: 24px;" class="fa-solid fa-arrow-left"></i>
-                </div>
-                <div class="fullname">
-                    <h3>Full Name</h3>
-                    <input type="text" name="FirstName" id="FirstName" placeholder="First Name" required>
-                    <input type="text" name="LastName" id="LastName" placeholder="Last Name" required>
-                </div>
-                <div class="jobtitle">
-                    <h3>Job Title</h3>
-                    <input type="text" name="jobtitle" id="jobtitle" placeholder="Job Title" required>
-                </div>
-                <div class="EmailAddress">
-                    <h3>Email Address</h3>
-                    <input type="email" name="emailaddress" placeholder="example@gmail.com" id="emailaddress" required>
-                </div>
-                <div class="MobileNumber">
-                    <h3>Mobile Number</h3>
-                    <input type="number" name="phonenumber" placeholder="Enter Number" id="phonenumber" required>
-                </div>
-                <div class="agencyname">
-                    <h3>Agency Name</h3>
-                    <input type="text" name="agencyname" placeholder="Agency Name" id="agencyname" required>
-                </div>
-                <div class="typeworks">
-                    <h3>Type Of Works</h3>
-                    <span><input type="checkbox" class="single-cb" name="typeworks" value="Art" id="art">Art</span>
-                    <span><input type="checkbox" class="single-cb" name="typeworks" value="Science" id="science">Science</span>
-                    <span><input type="checkbox" class="single-cb" name="typeworks" value="Technology" id="technology">Technology</span>
-                    <span><input type="checkbox" class="single-cb" name="typeworks" value="Other" id="other">Other</span>
-                </div>
-                <div class="Location">
-                    <h3>Location</h3>
-                    <input list="locations"  name="location" id="location" placeholder="Enter Location" required>
-                    <datalist id="locations"></datalist>
-                </div>
-                <div class="Requirements">
-                    <h3>Requirements</h3>
-                    <input type="text" name="requirements" placeholder="Type Here" style="width: 100%;" id="Requirements" required>
-                </div>
-                <div class="timework">
-                    <span><input type="checkbox" class="cb-times" name="timework" value="Full Time" id="fulltime">Full Time</span>
-                    <span><input type="checkbox" class="cb-times" name="timework" value="Part Time" id="parttime">Part Time</span>
-                </div>
-                <div id="submit">
-                    <button class="btnsubmit">Submit</button>
-                </div>
-            </form>
-        </section>
-        <section class="successModal" aria-hidden="true"><h2 style="display:none;">Success Modal</h2>
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Please wait a moment..</p>
-                <i class="fa-brands fa-searchengin" style="font-size: 49px;"></i>
-            </div>
-        </section>
         <section class="sidebar" aria-hidden="true"><h2 style="display:none;">Sidebar</h2>
             <div class="headersidebar">
                 <i class="searchicon fa-solid fa-magnifying-glass"></i>
@@ -139,4 +81,5 @@
     </main>
 </body>
 </html>
+
 

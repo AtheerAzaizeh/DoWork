@@ -433,89 +433,6 @@ span {
     margin-top: 5px;
 }
 
-.addjobs {
-    display: none;
-    margin: 5px 10px;
-    text-align: left;
-}
-
-.addjobs div {
-    margin-bottom: 0.5%;
-}
-
-h3 {
-    font-family: Helvetica;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.btnarrowright {
-    float: right;
-    margin-left: 35px;
-    margin-right: 5px;
-    margin-top: 4px;
-}
-
-.fullname {
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.fullname input {
-    display: inline-flex;
-    height: 35px;
-    justify-content: center;
-    text-align: center;
-    width: 49.15%;
-}
-
-.fullname {
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.input {
-    height: 35px;
-    text-align: center;
-    width: 99%;
-    justify-content: center;
-}
-
-.btnsubmit {
-    background-color: #20C997;
-    font-family: Helvetica;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 25%;
-    width: 50%;
-}
-
-.typeworks {
-    display: inline-block;
-    text-align: left;
-    width: 99%;
-}
-
-
-.typeworks input, .timework input {
-    width: 15px;
-}
-
-.typeworks span, .timework span {
-    align-items: center;
-    display: inline-flex;
-    font-family: Helvetica;
-    font-size: 16px;
-    font-weight: normal;
-    margin: 0px 7px;
-}
-
-.timework {
-    align-items: center;
-    display: flex;
-    justify-content: space-evenly;
-}
-
 /* Sidebar styling */
 .sidebar {
     background-color: #FFFF;
@@ -641,45 +558,6 @@ h3 {
     width: 100%;
 }
 
-.modal {
-    align-items: center;
-    backdrop-filter: blur(5px);
-    display: none;
-    height: 100%;
-    justify-content: center;
-    left: 0;
-    overflow: auto;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.successModal {
-    background-color: rgba(0, 0, 0, 0.4);
-    display: none;
-    height: 100%;
-    left: 0;
-    overflow: auto;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
-
-.titlethejob {
-    align-items: center;
-    background-color: #D2F4EA;
-    color: #0a0b0c;
-    display: flex;
-    font-family: Helvetica;
-    font-size: 16px;
-    font-weight: bold;
-    height: 40px;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-}
 
 .timeago {
     color: #6C757D;
