@@ -38,16 +38,15 @@ export function fetchCities() {
         .catch(error => console.error('Error fetching countries:', error.message));
   }
   
-  export function fetchUniversities() {
-    const countrySelect = document.getElementById('country');
-    const universitySelect = document.getElementById('institution_name');
-  
-    countrySelect.addEventListener('change', () => {
-        const selectedCountry = countrySelect.value;
-        universitySelect.innerHTML = '';
-  
-   
-    fetch(`/api/universities?country=${encodeURIComponent(selectedCountry)}`)
+ export function fetchUniversities() {
+  const countrySelect = document.getElementById('country');
+  const universitySelect = document.getElementById('institution_name');
+
+  countrySelect.addEventListener('change', () => {
+    const selectedCountry = countrySelect.value;
+    universitySelect.innerHTML = '';
+
+    fetch(`/api/universities/search?country=${encodeURIComponent(selectedCountry)}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
