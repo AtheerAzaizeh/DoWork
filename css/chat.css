@@ -33,11 +33,14 @@ aside {
     justify-content: space-between;
 }
 
-.logo img {
+.logo a {
+    display: block;
     width: 113px;
-    height: 100px;
-    margin-bottom: 20px;
-    margin-left: 55px;
+    height: 113px;
+    background-image: url("../images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto 20px auto;
 }
 
 nav ul {

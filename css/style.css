@@ -74,13 +74,16 @@ header {
 }
 .logo {
     animation: logoanimation 5s linear infinite;
+    background-image: url('../images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     cursor: pointer;
-    margin-left: 25px;
-}
-.logo img {
-    width: 104px;
     height: 89px;
+    margin-left: 25px;
+    width: 104px;
 }
+
 .logo:hover {
     animation-play-state: paused;
 }
@@ -230,7 +233,6 @@ li a {
 .instructions img {
     margin-top: 12px;
     width: 75px;
-    height: 75px;
 }
 
 .instructions div {

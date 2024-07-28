@@ -36,20 +36,21 @@ aside {
     height: 100vh;
 }
 
-.logo img {
-    width: 100%;
-    max-width: 113px;
-    height: auto;
-    margin-bottom: 20px;
+.logo a {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 113px;
+    height: 113px;
+    background-image: url("../images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto 20px auto;
 }
+
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin-top: 20px; /* Adjust this value to control the spacing */
+    margin-top: 20px;
 }
 
 nav ul li {
@@ -319,7 +320,7 @@ footer .app-links a {
         padding: 20px;
     }
 
-    .logo img {
+    .logo a {
         width: 80px;
         height: auto;
         margin-bottom: 10px;
