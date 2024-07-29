@@ -1,3 +1,4 @@
+import { fetchCities } from './make-cv/dataFetchers.js'
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form');
     const submitButton = document.getElementById('submit-button');
