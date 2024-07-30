@@ -1,6 +1,6 @@
-import { openPhotoInput, displaySelectedPhoto } from './make-cv/photoUploader.js';
-import { toggleSection, saveSection, submitCV } from './make-cv/formSections.js';
-import { fetchCities, fetchCountries, fetchUniversities } from './make-cv/dataFetchers.js';
+import { openPhotoInput, displaySelectedPhoto } from '../make-cv/photoUploader.js';
+import { toggleSection, saveSection, submitCV } from '../make-cv/formSections.js';
+import { fetchCities, fetchCountries, fetchUniversities } from '../make-cv/dataFetchers.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchCities();
