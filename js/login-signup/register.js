@@ -13,15 +13,9 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         role
     };
 
-    var requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
-      };
-    
     try {
-        const emailResponse = await fetch(`https://api.eva.pingutil.com/email?email=${email}`, requestOptions);
+        const emailResponse = await fetch(`https://api.eva.pingutil.com/email?email=${email}`);
         const emailResult = await emailResponse.json();
-
         if (!emailResult.data.deliverable || emailResult.data.disposable) {
             alert('Email is not valid');
             return;
@@ -46,3 +40,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         alert('An error occurred during registration');
     }
 });
+
+
+
+
