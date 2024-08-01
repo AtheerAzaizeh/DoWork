@@ -41,7 +41,7 @@ export function fetchCities() {
  export function fetchUniversities() {
   const countrySelect = document.getElementById('country');
   const universitySelect = document.getElementById('institution_name');
-
+  
   countrySelect.addEventListener('change', () => {
     const selectedCountry = countrySelect.value;
     universitySelect.innerHTML = '';
@@ -62,7 +62,7 @@ export function fetchCities() {
         });
       })
       .catch(error => {
-        console.error('Error fetching universities:', error);
+        console.error('Error fetching universities:', error.message);
       });
   });
 }
