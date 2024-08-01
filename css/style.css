@@ -1021,3 +1021,30 @@ button[type="button"]:hover {
 .listmenu ul li:hover{
     background-color: #A6E9D5;
 }
+.profile-menu {
+    display: none;
+    position: absolute;
+    background-color: #88888843;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    right: 10px;
+    top: 60px;
+    z-index: 1000;
+}
+
+.profile-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-menu ul li {
+    padding: 20px 40px;
+}
+
+.profile-menu ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    float: left;
+}
+
