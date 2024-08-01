@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="js/sidebarmenu.js" defer></script>
+    <script src="js/profilemenu.js"></script>
+    <script src="js/swalfire.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header>
@@ -23,6 +26,13 @@
         </div>
         <div class="pictureprofile">      
             <nav class="arrow-down"><div class="arrow"></div></nav>
+            <div id="profile-menu" class="profile-menu">
+                <ul>
+                    <li><a href="#"><i class="fas fa-user"></i> My profile</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                </ul>
+            </div>
             <img src="images/aurly.png" alt="Profile Picture">
             <div class="online"></div>
         </div>              
