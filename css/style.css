@@ -348,13 +348,12 @@ span {
     text-align: center;
     width: 100%;
 }
-
-.searchjob {
-    background-color: white;
-    border-radius: 32px;
-    height: 30px;
-    text-align: center;
-    width: 75%;
+.search-bar {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    margin-left: 10px;
 }
 
 .titlemenu {
@@ -365,15 +364,6 @@ span {
     position: absolute;
     text-align: center;
     width: 100%;
-}
-.logosearch {
-    float: left;
-    margin: 5px;
-}
-
-.searchajob {
-    margin-top: 4px;
-    text-align: center;
 }
 
 .filterjob {
