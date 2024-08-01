@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="js/movepages.js" defer></script>
+    <script src="js/reportsmodalopen.js"></script>
+    <script src="js/profilemenu.js"></script>
 </head>
 <body>
     <header>
@@ -33,6 +34,13 @@
                 <img src="images/doronprofilepicture.png" alt="Profile Picture">
                 <span>Doron Avi</span>
                 <i class="fas fa-chevron-down arrow-down"></i>
+                <div id="profile-menu" class="profile-menu">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-user"></i> My profile</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -49,20 +57,20 @@
                 <section class="reports">
                     <h2>My Reports</h2>
                     <div class="reports-buttons">
-                        <button>All Reports</button>
-                        <button>Delete Reports</button>
-                        <button>In Progress Reports</button>
-                        <button>Current Reports</button>
+                        <button id="all-reports-button">All Reports</button>
+                        <button id="delete-reports-button">Delete Reports</button>
+                        <button id="in-progress-reports-button">In Progress Reports</button>
+                        <button id="current-reports-button">Current Reports</button>
                     </div>
                 </section>
             </div>
             <p class="categories-heading">Search by category</p>
-            <section class="categories">
-                <div class="category" id="workers" >
+            <section class="categories" aria-label="Categories">
+                <div class="category" id="workers">
                     <p>Discover workers</p>
                     <a href="workerslist.html"><img src="images/workers.png" alt="Discover workers"></a>
                 </div>
-                <div class="category" id="interview" >
+                <div class="category" id="interview">
                     <p>Job interview</p>
                     <a href="setinterview.html"><img src="images/interview.jpeg" alt="Job interview"></a>
                 </div>
@@ -84,10 +92,41 @@
             <div class="app-links">
                 <a href="https://www.apple.com/app-store/"><i class="fab fa-apple"></i></a>
                 <a href="https://play.google.com/store/games"><i class="fab fa-google-play"></i></a>
+
             </div>
         </div>
     </footer>
+
+    <!-- Modal Structures -->
+    <div id="all-reports-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <iframe src="all-reports.html" class="modal-iframe"></iframe>
+        </div>
+    </div>
+
+    <div id="delete-reports-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <iframe src="deletereports.html" class="modal-iframe"></iframe>
+        </div>
+    </div>
+
+    <div id="in-progress-reports-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <iframe src="inprogressreports.html" class="modal-iframe"></iframe>
+        </div>
+    </div>
+
+    <div id="current-reports-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <iframe src="currentreports.html" class="modal-iframe"></iframe>
+        </div>
+    </div>
 </body>
 </html>
+
 
 
