@@ -9,8 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/reportsmodalopen.js"></script>
     <script src="js/profilemenu.js"></script>
+    <script src="js/swalfire.js"></script>
 </head>
 <body>
     <header>
@@ -38,7 +40,7 @@
                     <ul>
                         <li><a href="#"><i class="fas fa-user"></i> My profile</a></li>
                         <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
-                        <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                        <li><a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
                     </ul>
                 </div>
             </div>
@@ -107,26 +109,23 @@
 
     <div id="delete-reports-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
+            <span class="close-button">&times;"></span>
             <iframe src="deletereports.html" class="modal-iframe"></iframe>
         </div>
     </div>
 
     <div id="in-progress-reports-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
+            <span class="close-button">&times;"></span>
             <iframe src="inprogressreports.html" class="modal-iframe"></iframe>
         </div>
     </div>
 
     <div id="current-reports-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
+            <span class="close-button">&times;"></span>
             <iframe src="currentreports.html" class="modal-iframe"></iframe>
         </div>
     </div>
 </body>
 </html>
-
-
-
