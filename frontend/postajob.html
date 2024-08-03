@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post a job</title>
+    <link rel="stylesheet" href="css/desktopinstructions.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <script src="js/submitandmove.js" defer></script>
+    <script src="js/fetchUserData.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/location.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="logo">
+          <a href="desktophomepage.html"></a>
+        </div>
+        <nav>
+          <ul>
+              <li><a href="desktophomepage.html"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="workerslist.html"><i class="fas fa-users"></i> Workers list</a></li>
+              <li><a href="postajob.html" class="active"><i class="fas fa-file-alt"></i> Post a job</a></li>
+              <li><a href="setinterview.html"><i class="fas fa-calendar-alt"></i> Set interview</a></li>
+          </ul>
+      </nav>
+      <nav class="bottom-nav">
+        <ul>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="desktophomepage.html"><i class="fas fa-sign-out-alt"></i> Exit</a></li>
+        </ul>
+    </nav>
+      </aside>
+      <main>
+        <header>
+          <div class="profile">
+              <i class="fas fa-bell alert-icon"></i>
+              <img src="images/doronprofilepicture.png" alt="Profile Picture">
+              <span>Doron Avi</span>
+              <i class="fas fa-chevron-down arrow-down"></i>
+          </div>
+      </header>
+        <a href="desktophomepage.html" class="back-button" id="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <div class="form-container">
+          <h2>Post a job</h2>
+          <form id="job-form">
+            <div class="form-group">
+              <label for="first-name">Full Name</label>
+              <div class="name-fields">
+                <input type="text" id="first-name" name="first-name" placeholder="First Name" required/>
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="example@gmail.com" required/>
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile Number</label>
+              <input type="tel" id="mobile" name="mobile" placeholder="Enter Number" required/>
+            </div>
+            <div class="form-group">
+              <label for="job-title">Job Title</label>
+              <input type="text" id="job-title" name="job-title" placeholder="Type here" required/>
+            </div>
+            <div class="form-group">
+              <label for="description">Job Description</label>
+              <textarea id="description" name="description" placeholder="Enter job description" required></textarea>
+            </div>
+            <div class="form-group">
+              <label>Type Of Work</label>
+              <div class="checkbox-group">
+                <label><input type="radio" name="work-type" value="art" required/>Art</label>
+                <label><input type="radio" name="work-type" value="science" required/>Science</label>
+                <label><input type="radio" name="work-type" value="technology" required/>Technology</label>
+                <label><input type="radio" name="work-type" value="other" required/>Other</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label>
+              <select id="location" required>
+                  <option value="" disabled selected>Select Location</option>
+              </select>
+          </div>
+            <div class="form-group">
+              <label for="years-of-exp">Years of Experience</label>
+              <input type="number" id="years-of-exp" name="years-of-exp" placeholder="Enter years of experience" required/>
+            </div>
+            <div class="form-group">
+              <label for="education">Education</label>
+              <input type="text" id="education" name="education" placeholder="Enter your education level" required/>
+            </div>
+            <div class="form-group">
+              <label for="skills">Skills</label>
+              <input type="text" id="skills" name="skills" placeholder="Enter your skills" required/>
+            </div>
+            <button type="submit" id="submit-button">Submit</button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <div class="footer-content">
+          <div class="social-media">
+              <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+              <a href="https://x.com/?lang=en"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="app-links">
+              <a href="https://www.apple.com/app-store/"><i class="fab fa-apple"></i></a>
+              <a href="https://play.google.com/store/games"><i class="fab fa-google-play"></i></a>
+          </div>
+      </div>
+  </footer>
+  </body>
+</html>
