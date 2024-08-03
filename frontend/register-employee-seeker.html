@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Employee Seeker</title>
+  <script src="js/login-signup/register.js" type="module"></script>
+</head>
+<body>
+  <h1>Register Employee Seeker</h1>
+  <form id="register-form" data-user-type="employeeSeeker">
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <div class="photo-upload">
+      <div id="profile_image_url" class="profile_image_url">
+          <i class="fas fa-camera"></i>
+          <span>Add Photo</span>
+      </div>
+      <input type="file" id="photoInput" style="display:none;" >
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
