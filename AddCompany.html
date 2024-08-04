@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Edit Company</title>
+    <script src="js/config.js"></script>
+    <link rel="stylesheet" href="CSS/desktopstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/reportsview/reportsmodalopen.js"></script>
+    <script src="js/reportsview/reportsfetch.js"></script>
+    <script src="js/profilemenu.js"></script>
+    <script src="js/swalfire.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        .company-details {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .company-details h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .company-details form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .company-details label {
+            margin-bottom: 5px;
+        }
+
+        .company-details input,
+        .company-details textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .company-details button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #submit-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #edit-button {
+            background-color: #ffa500;
+            color: white;
+        }
+
+        #delete-button {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .company-details button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="home-logo">
+                <a href="desktophomepage.html"></a>
+            </div>            
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="desktophomepage.html" class="active">Home</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </nav>
+            <div class="profile">
+                <i class="fas fa-bell alert-icon"></i>
+                <img src="images/doronprofilepicture.png" alt="Profile Picture">
+                <span>Doron Avi</span>
+                <i class="fas fa-chevron-down arrow-down"></i>
+                <div id="profile-menu" class="profile-menu">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-user"></i> My profile</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="welcome-message">
+                <h1>Good Day Doron!</h1>
+                <p>It's good seeing you again</p>
+            </div>
+            <div class="company-details">
+                <h2 id="company-action-heading">Add Company</h2>
+                <form id="company-form">
+                    <label for="company_name">Company Name</label>
+                    <input type="text" id="company_name" name="company_name" required>
+                    <label for="company_description">Company Description</label>
+                    <textarea id="company_description" name="company_description" required></textarea>
+                    <label for="contact_email">Contact Email</label>
+                    <input type="email" id="contact_email" name="contact_email" required>
+                    <button type="submit" id="submit-button">Add Company</button>
+                </form>
+                <button id="edit-button" style="display:none;">Edit Company</button>
+                <button id="delete-button" style="display:none;">Delete Company</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const employeeSeekerId = sessionStorage.getItem('user_id');
+            const companyForm = document.getElementById('company-form');
+            const companyNameInput = document.getElementById('company_name');
+            const companyDescriptionInput = document.getElementById('company_description');
+            const contactEmailInput = document.getElementById('contact_email');
+            const submitButton = document.getElementById('submit-button');
+            const editButton = document.getElementById('edit-button');
+            const deleteButton = document.getElementById('delete-button');
+            const companyActionHeading = document.getElementById('company-action-heading');
+    
+            if (employeeSeekerId) {
+                axios.get(`${CONFIG.API_URL}/employers?employee_seeker_id=${employeeSeekerId}`)
+                    .then(response => {
+                        const employer = response.data[0];
+                        if (employer && employer.employer_id) {
+                            sessionStorage.setItem('employer_id', employer.employer_id);
+                            companyNameInput.value = employer.company_name;
+                            companyDescriptionInput.value = employer.company_description;
+                            contactEmailInput.value = employer.contact_email;
+                            companyActionHeading.innerText = 'Edit Company';
+                            submitButton.innerText = 'Save Changes';
+                            editButton.style.display = 'inline-block';
+                            deleteButton.style.display = 'inline-block';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching employer details:', error);
+                    });
+            }
+    
+            companyForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const employerId = sessionStorage.getItem('employer_id');
+                const companyData = {
+                    company_name: companyNameInput.value,
+                    company_description: companyDescriptionInput.value,
+                    contact_email: contactEmailInput.value,
+                    employee_seeker_id: employeeSeekerId
+                };
+    
+                if (employerId) {
+                    // Update existing company
+                    axios.put(`${CONFIG.API_URL}/employers/${employerId}`, companyData)
+                        .then(response => {
+                            alert('Company updated successfully');
+                        })
+                        .catch(error => {
+                            console.error('Error updating company:', error);
+                        });
+                } else {
+                    // Add new company
+                    axios.post(`${CONFIG.API_URL}/employers`, companyData)
+                        .then(response => {
+                            alert('Company added successfully');
+                            sessionStorage.setItem('employer_id', response.data.employer_id);
+                            companyActionHeading.innerText = 'Edit Company';
+                            submitButton.innerText = 'Save Changes';
+                            editButton.style.display = 'inline-block';
+                            deleteButton.style.display = 'inline-block';
+                        })
+                        .catch(error => {
+                            console.error('Error adding company:', error);
+                        });
+                }
+            });
+    
+            deleteButton.addEventListener('click', function() {
+                const employerId = sessionStorage.getItem('employer_id');
+                if (employerId) {
+                    axios.delete(`${CONFIG.API_URL}/employers/${employerId}`)
+                        .then(response => {
+                            alert('Company deleted successfully');
+                            sessionStorage.removeItem('employer_id');
+                            companyForm.reset();
+                            companyActionHeading.innerText = 'Add Company';
+                            submitButton.innerText = 'Add Company';
+                            editButton.style.display = 'none';
+                            deleteButton.style.display = 'none';
+                        })
+                        .catch(error => {
+                            console.error('Error deleting company:', error);
+                        });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

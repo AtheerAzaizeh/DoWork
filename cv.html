@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <title>Create CV</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/flatpicker.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="home.html" id="arrowleftIcon">
+        <i class="fas fa-arrow-left"></i>
+        Make your CV
+      </a>
+      <div class="logo">
+        <a href="home.html"></a>
+      </div>
+      <div class="pictureprofile">
+        <img src="images/aurlynewpicture.png" alt="Profile Picture" />
+      </div>
+    </header>
+    <main>
+      <div class="content">
+        <div class="tab-bar">
+          <div class="tab active"><i class="fas fa-user"></i> About</div>
+          <div class="tab" id="templateTab">
+            <i class="fas fa-images"></i> Template
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="form">
+          <div class="photo-upload">
+            <div id="profile_image_url" class="profile_image_url">
+              <i class="fas fa-camera"></i>
+              <span>Add Photo</span>
+            </div>
+            <input type="file" id="photoInput" style="display: none" />
+          </div>
+          <form id="cv-form" onsubmit="submitCV(); return false;">
+            <!-- Personal Details Section -->
+            <h2>Personal Details</h2>
+            <input type="hidden" id="user_id" value="user_id">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+            <label for="date_of_birth">Date of Birth:</label>
+            <input type="text" id="date_of_birth" name="date_of_birth" required class="flatpickr">
+            <label for="location">Location:</label>
+            <select id="location" name="location" required>
+              <option value="">Select your location</option>
+              <!-- Add more options here -->
+            </select>
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" id="phone_number" name="phone_number" required>
+            <!-- Education Section -->
+            <h2>Education</h2>
+            <label for="country">Country Of Study:</label>
+            <select id="country" name="country" required>
+              <option value="">Select a country</option>
+              <!-- Add more options here -->
+            </select>
+            <br>
+            <label for="institution_name">Institution Name:</label>
+            <select id="institution_name" name="institution_name" required>
+              <option value="">Select an institution</option>
+              <!-- Add more options here -->
+            </select>
+            <br>
+            <label for="degree">Degree:</label>
+            <select id="degree" name="degree" required>
+              <option value="">Select a degree</option>
+              <option value="bachelor">Bachelor</option>
+              <option value="master">Master</option>
+              <option value="doctorate">Doctorate</option>
+              <option value="diploma">Diploma</option>
+            </select>
+            <label for="field_of_study">Field of Study:</label>
+            <select id="field_of_study" name="field_of_study" required>
+              <option value="">Select a field of study</option>
+              <option value="computer science">Computer Science</option>
+              <option value="engineering">Engineering</option>
+              <option value="business">Business</option>
+              <option value="arts">Arts</option>
+              <option value="science">Science</option>
+              <option value="law">Law</option>
+              <option value="medicine">Medicine</option>
+              <option value="other">Other</option>
+            </select>
+            <label for="start_date">Start Date:</label>
+            <input type="text" id="start_date" name="start_date" required class="flatpickr">
+            <label for="end_date">End Date:</label>
+            <input type="text" id="end_date" name="end_date" required class="flatpickr">
+            <!-- Work Experience Section -->
+            <h2>Work Experience</h2>
+            <label for="company_name">Company Name:</label>
+            <input type="text" id="company_name" name="company_name" required>
+            <label for="job_title">Job Title:</label>
+            <input type="text" id="job_title" name="job_title" required>
+            <label for="start_date_work">Start Date:</label>
+            <input type="text" id="start_date_work" name="start_date_work" required class="flatpickr">
+            <label for="end_date_work">End Date:</label>
+            <input type="text" id="end_date_work" name="end_date_work" required class="flatpickr">
+            <label for="skills">Skills:</label>
+            <textarea id="skills" name="skills" required></textarea>
+            <button  id="submit-cv" type="submit" onclick="submitCV()">Save</button>
+          </form>
+          <p id="cv-error" style="color: red"></p>
+        </div>
+      </div>
+    </main>
+    <!-- Modal Structure -->
+    <div id="notificationModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Your CV was sent to your email</p>
+      </div>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/mainpages/make-cv-main.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.1.0/compressor.min.js"></script>
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- SweetAlert2 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

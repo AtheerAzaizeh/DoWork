@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Jobs Posted</title>
+    <link rel="stylesheet" href="CSS/desktopstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="js/config.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <style>
+        /* Basic styling for job details */
+        #job-info {
+            display: flex;
+            /* flex-wrap: wrap; */
+            gap: 20px;
+            justify-content: center;
+            width: 800px;
+            height: 250px;
+        }
+        .container {
+           /* max-width: 1200px; */
+
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .job-details {
+            margin-top: 20px;
+        }
+        .job-details h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .job-details p {
+            margin: 5px 0;
+        }
+        .job {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            position: relative;
+            width: calc(33.333% - 40px); /* Three cards per row with gap */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .job:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .job p {
+            margin: 8px 0;
+        }
+        .job-buttons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .job-buttons button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .edit-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .delete-button {
+            background-color: #f44336;
+            color: white;
+        }
+        .job-buttons button:hover {
+            opacity: 0.8;
+        }
+        .edit-form-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .edit-form-container.active {
+            display: block;
+        }
+        .edit-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .edit-form label {
+            margin-bottom: 5px;
+        }
+        .edit-form input, .edit-form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .edit-form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .edit-form-buttons button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .save-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .cancel-button {
+            background-color: #f44336;
+            color: white;
+        }
+        .edit-form-buttons button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="home-logo">
+                <a href="employeeseekerhmpg.html"></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="employeeseekerhmpg.html" class="active">Home</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </nav>
+            <div class="profile">
+                <i class="fas fa-bell alert-icon"></i>
+                <img src="images/doronprofilepicture.png" alt="Profile Picture">
+                <span>Doron Avi</span>
+                <i class="fas fa-chevron-down arrow-down"></i>
+                <div id="profile-menu" class="profile-menu">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-user"></i> My profile</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container job-details">
+        <h2>Job Details</h2>
+        <div id="job-info">
+            <!-- Job information will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <div class="edit-form-container" id="editFormContainer">
+        <form class="edit-form" id="editForm">
+            <h2>Edit Job</h2>
+            <label for="editTitle">Title</label>
+            <input type="text" id="editTitle" name="title">
+            <label for="editDescription">Description</label>
+            <textarea id="editDescription" name="description"></textarea>
+            <label for="editLocation">Location</label>
+            <input type="text" id="editLocation" name="location">
+            <label for="editSalary">Salary</label>
+            <input type="text" id="editSalary" name="salary">
+            <label for="editSkill">Skill</label>
+            <input type="text" id="editSkill" name="skill">
+            <div class="edit-form-buttons">
+                <button type="button" class="save-button" onclick="saveJob()">Save</button>
+                <button type="button" class="cancel-button" onclick="closeEditForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let currentJobId = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const employerId = sessionStorage.getItem('employer_id');
+            
+            if (!employerId) {
+                console.error('No employer_id found in sessionStorage');
+                document.getElementById('job-info').innerHTML = '<p>No employer ID found in session storage.</p>';
+                return;
+            }
+            
+            const apiUrl = `${CONFIG.API_URL}/jobs/${employerId}`;
+            console.log('Fetching job details for employer_id:', employerId);
+            
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const jobInfoDiv = document.getElementById('job-info');
+                    if (data.length > 0) {
+                        const jobDetails = data.map(job => `
+                            <div class="job">
+                                <p><strong>Title:</strong> ${job.title}</p>
+                                <p><strong>Description:</strong> ${job.description}</p>
+                                <p><strong>Location:</strong> ${job.location}</p>
+                                <p><strong>Salary:</strong> ${job.salary}</p>
+                                <p><strong>Required Skill:</strong> ${job.skill}</p>
+                                <div class="job-buttons">
+                                    <button class="edit-button" onclick="editJob(${job.job_id}, '${job.title}', '${job.description}', '${job.location}', '${job.salary}', '${job.skill}')">Edit</button>
+                                    <button class="delete-button" onclick="deleteJob(${job.job_id})">Delete</button>
+                                </div>
+                            </div>
+                        `).join('');
+                        jobInfoDiv.innerHTML = jobDetails;
+                    } else {
+                        jobInfoDiv.innerHTML = '<p>No job details available.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching job details:', error);
+                    document.getElementById('job-info').innerHTML = '<p>Error fetching job details.</p>';
+                });
+        });
+
+        function editJob(jobId, title, description, location, salary, skill) {
+            currentJobId = jobId;
+            document.getElementById('editTitle').value = title;
+            document.getElementById('editDescription').value = description;
+            document.getElementById('editLocation').value = location;
+            document.getElementById('editSalary').value = salary;
+            document.getElementById('editSkill').value = skill;
+            document.getElementById('editFormContainer').classList.add('active');
+        }
+
+        function saveJob() {
+    const updatedJob = {
+        title: document.getElementById('editTitle').value,
+        description: document.getElementById('editDescription').value,
+        location: document.getElementById('editLocation').value,
+        salary: document.getElementById('editSalary').value,
+        skill: document.getElementById('editSkill').value
+    };
+
+    const apiUrl = `${CONFIG.API_URL}/jobs/${currentJobId}`;
+    fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedJob)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();  // Use .text() instead of .json()
+    })
+    .then(data => {
+        alert(data);  // Alert the plain text response
+        document.getElementById('editFormContainer').classList.remove('active');
+        location.reload(); // Refresh the job list
+    })
+    .catch(error => {
+        console.error('Error updating job:', error);
+        alert('Error updating job');
+    });
+}
+
+
+        function closeEditForm() {
+            document.getElementById('editFormContainer').classList.remove('active');
+        }
+
+        function deleteJob(jobId) {
+            const apiUrl = `${CONFIG.API_URL}/jobs/${jobId}`;
+            fetch(apiUrl, {
+                method: 'DELETE',
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert('Job deleted successfully');
+                location.reload(); // Simple way to refresh the page and get updated job list
+            })
+            .catch(error => {
+                console.error('Error deleting job:', error);
+                alert('Error deleting job');
+            });
+        }
+    </script>
+</body>
+</html>

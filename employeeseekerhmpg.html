@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoWork</title>
+    <link rel="stylesheet" href="CSS/desktopstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/reportsview/reportsmodalopen.js"></script>
+    <script src="js/reportsview/reportsfetch.js"></script>
+    <script src="js/profilemenu.js"></script>
+    <script src="js/swalfire.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/config.js"></script>
+
+
+    <style>
+        .company-details {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .company-details h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .company-details form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .company-details label {
+            margin-bottom: 5px;
+        }
+
+        .company-details input,
+        .company-details textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .company-details button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #submit-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #edit-button {
+            background-color: #ffa500;
+            color: white;
+        }
+
+        #delete-button {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .company-details button:hover {
+            opacity: 0.8;
+        }
+
+        .icon-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .fa-building {
+            width: 168px;
+            height: 130px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="home-logo">
+                <a href="desktophomepage.html"></a>
+            </div>            
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="desktophomepage.html" class="active">Home</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </nav>
+            <div class="profile">
+                <i class="fas fa-bell alert-icon"></i>
+                <img src="images/doronprofilepicture.png" alt="Profile Picture">
+                <span>Doron Avi</span>
+                <i class="fas fa-chevron-down arrow-down"></i>
+                <div id="profile-menu" class="profile-menu">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-user"></i> My profile</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>   
+    <main>
+        <div class="container">
+            <div class="welcome-message">
+                <h1>Good Day Doron!</h1>
+                <p>It's good seeing you again</p>
+            </div>
+            <div class="search-help-reports">
+                <div class="search-help">
+                    <input type="text" placeholder="What can we help you with?">
+                </div>
+                <section class="reports">
+                    <h2>My Reports</h2>
+                    <div class="reports-buttons">
+                        <a href="emplyeejobsposted.html">
+                            <button id="all-reports-button">All Reports</button>
+                        </a>
+                        <button id="delete-reports-button">Delete Reports</button>
+                        <button id="in-progress-reports-button">In Progress Reports</button>
+                        <button id="current-reports-button">Current Reports</button>
+                    </div>
+                </section>
+            </div>
+            <p class="categories-heading">Search by category</p>
+            <section class="categories" aria-label="Categories">
+                <div class="category" id="workers">
+                    <p>Discover workers</p>
+                    <a href="workerslist.html"><img src="images/workers.png" alt="Discover workers"></a>
+                </div>
+                <div class="category" id="interview">
+                    <p>Job interview</p>
+                    <a href="setinterview.html"><img src="images/interview.jpeg" alt="Job interview"></a>
+                </div>
+                <div class="category" id="post-job">
+                    <p>Post a job</p>
+                    <a href="postajob.html"><img src="images/postjob.jpeg" alt="Post a job"></a>
+                </div>
+                <div class="category" id="new-task">
+                    <p>Add Company</p>
+                    <a href="AddCompany.html"><i class="fa-solid fa-building" style="width:168px;   height:130px;" ></i></a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/?lang=en"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="app-links">
+                <a href="https://www.apple.com/app-store/"><i class="fab fa-apple"></i></a>
+                <a href="https://play.google.com/store/games"><i class="fab fa-google-play"></i></a>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Structures -->
+    <div id="all-reports-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <iframe src="all-reports.html" class="modal-iframe"></iframe>
+        </div>
+    </div>
+</body>
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const employeeSeekerId = sessionStorage.getItem('user_id');
+
+            if (employeeSeekerId) {
+                axios.get(`${CONFIG.API_URL}/employers/employee-seeker/${employeeSeekerId}`)
+                    .then(response => {
+                        const employer = response.data;
+                        if (employer) {
+                            sessionStorage.setItem('employer_id', employer.employer_id);
+                            // Use the employer details as needed
+                        } else {
+                            console.log("No employer found for this employee seeker ID");
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching employer details:', error);
+                    });
+            } else {
+                console.log("No employee seeker ID found in session storage");
+            }
+        });
+    </script>
+</html>

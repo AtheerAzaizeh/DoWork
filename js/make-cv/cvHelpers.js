@@ -1,0 +1,139 @@
+export async function uploadPhoto(file) {
+  const formData = new FormData();
+  formData.append('photo', file);
+
+  try {
+    const response = await fetch('http://localhost:3010/upload', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      sessionStorage.setItem('photo', result.photoUrl);
+      alert('تم تحميل الصورة بنجاح');
+    } else {
+      alert(result.message);
+    }
+  } catch (error) {
+    console.error('فشل في تحميل الصورة:', error);
+  }
+}
+
+export function toggleSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+  }
+}
+
+export function saveSection(currentSection, nextSectionId) {
+  let data = {};
+  if (currentSection === 'personal-details-section') {
+    data = {
+      first_name: document.getElementById('first_name').value,
+      last_name: document.getElementById('last_name').value,
+      date_of_birth: document.getElementById('date_of_birth').value,
+      profile_image_url: sessionStorage.getItem('photo') || '',
+      location: document.getElementById('location').value,
+      phone_number: document.getElementById('phone_number').value,
+    };
+  } else if (currentSection === 'education-section') {
+    data = {
+      country: document.getElementById('country').value,
+      institution_name: document.getElementById('institution_name').value,
+      degree: document.getElementById('degree').value,
+      field_of_study: document.getElementById('field_of_study').value,
+      start_date: document.getElementById('start_date').value,
+      end_date: document.getElementById('end_date').value,
+    };
+  } else if (currentSection === 'work-experience-section') {
+    data = {
+      company_name: document.getElementById('company_name').value,
+      job_title: document.getElementById('job_title').value,
+      start_date: document.getElementById('start_date_work').value,
+      end_date: document.getElementById('end_date_work').value,
+      skills: document.getElementById('skills').value,
+    };
+  }
+
+  for (let key in data) {
+    if (!data[key]) {
+      document.getElementById('cv-error').textContent = 'يرجى ملء جميع الحقول.';
+      return;
+    }
+  }
+
+  sessionStorage.setItem(currentSection, JSON.stringify(data));
+  document.getElementById('cv-error').textContent = '';
+
+  const currentSectionElement = document.getElementById(currentSection);
+  const nextSectionElement = document.getElementById(nextSectionId);
+
+  if (currentSectionElement) {
+    currentSectionElement.style.display = 'none';
+  }
+
+  if (nextSectionElement) {
+    nextSectionElement.style.display = 'block';
+  }
+
+  if (sessionStorage.getItem('personal-details-section') && sessionStorage.getItem('education-section') && sessionStorage.getItem('work-experience-section')) {
+    document.getElementById('next-step').style.display = 'block';
+  }
+}
+
+export async function submitCV(event) {
+  event.preventDefault(); 
+  const user_id = sessionStorage.getItem('user_id');
+  if (!user_id) {
+      alert("user id not");
+      return;
+  }
+
+  const resumeUrl = sessionStorage.getItem('photo') || 'http://example.com/default_resume.pdf';
+  if (resumeUrl.length > 255) {  
+      alert('data too long');
+      return;
+  }
+
+  const cvData = {
+      job_seeker_id: user_id,
+      resume_url: resumeUrl,
+      skills: document.getElementById('skills').value ? document.getElementById('skills').value.split(',') : [],
+      workExperiences: [
+          {
+              work_name: document.getElementById('company_name').value || null,
+              start_date: document.getElementById('start_date_work').value || null,
+              end_date: document.getElementById('end_date_work').value || null
+          }
+      ],
+      education: [
+          {
+              academic_name: document.getElementById('institution_name').value || null,
+              start_date: document.getElementById('start_date').value || null,
+              end_date: document.getElementById('end_date').value || null
+          }
+      ]
+  };
+
+  try {
+      const response = await fetch(`${CONFIG.API_URL}/cvs`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(cvData)
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+          alert(result.message);
+          window.location.href = "jobseekerhmpg.html";
+      } else {
+          alert(result.message);
+      }
+  } catch (error) {
+      console.error('failed send cv', error);
+  }
+}

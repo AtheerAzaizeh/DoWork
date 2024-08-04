@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do-Work Home Page</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300;400;700&display=swap" rel="stylesheet"/>
+    <script src="js/config.js"></script>
+    <script src="js/jobsview/jobs.js" defer></script>
+    <script src="js/sidebarmenu.js"></script>
+
+  </head>
+  <body>
+    <header>
+      <nav class="menu">
+        <div class="menu-icon">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </nav>
+      <div class="logo">
+        <a href="home.html"></a>
+      </div>
+      <div class="pictureprofile">      
+          <nav class="arrow-down"><div class="arrow"></div></nav>
+          <div id="profile-menu" class="profile-menu">
+              <ul>
+                  <li><a href="#"><i class="fas fa-user"></i> My profile</a></li>
+                  <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                  <li><a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+              </ul>
+          </div>
+          <img src="images/aurly.png" alt="Profile Picture">
+          <div class="online"></div>
+      </div>              
+  </header>
+    <main>
+      <p class="Welcome">Welcome back Aurly!</p>
+      <section class="jobs">
+        <div class="header-wrapper"></div>
+        <div class="headerjobs"><h3>Jobs</h3></div>
+        <div class="menujobs">
+          <ul id="jobs-list">
+            <!-- Jobs will be dynamically loaded here -->
+          </ul>
+        </div>
+        <div class="footerjobs"><a href="Menupage.html">Load More Jobs</a></div>
+      </section>
+      <section class="instructions">
+        <div class="makecv">
+          <a href="cv.html">
+            <h4>Make CV</h4>
+            <img src="images/makecv.png" alt="make cv" />
+          </a>
+        </div>
+        <div class="findjob">
+          <a href="Menupage.html">
+            <h4>Find a Job</h4>
+            <img src="images/findjob.jpeg" alt="find a job" />
+          </a>
+        </div>
+        <div class="interview">
+          <a href="chat.html">
+            <h4>Interview</h4>
+            <img src="images/interview.jpeg" alt="make interview" />
+          </a>
+        </div>
+        <div class="reports">
+          <a href="#">
+            <h4>Reports</h4>
+            <img src="images/reports.png" alt="reports" />
+          </a>
+        </div>
+      </section>
+      <section class="sidebar">
+        <div class="headersidebar">
+          <i class="searchicon fa-solid fa-magnifying-glass"></i>
+          <input type="search" placeholder="Search" />
+          <span class="exit-icon">&#x2716;</span>
+        </div>
+        <div class="profile">
+          <img src="images/aurly.png" alt="Profile Picture" class="profile-img">
+          <h2 class="profile-name">Aurly Dahan</h2>
+          <p class="profile-email">aurlydahan@gmail.com</p>
+      </div>  
+      <nav class="sidebarmenu">
+        <ul>
+            <li class="homeicon"><a href="aurlyhomepage.html" class="active"><i class="fas fa-home"></i>Home</a><i class="fa-solid fa-arrow-left" id="arrowleft"></i></li>
+            <li class="jobsicon"><a href="Menupage.html"><i class="fas fa-list"></i>Jobs list</a></li>
+            <li class="createcvicon"><a href="cv.html"><i class="fas fa-pen"></i>Create CV</a></li>
+            <li class="findjobicon"><a href="#"><i class="fas fa-search"></i>Find a job</a></li>
+        </ul>
+        <div class="footersidebarmenu">
+            <ul>
+                <li class="settingicon"><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
+                <li class="contactusicon"><a href="#"><i class="fas fa-person circle question"></i>Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-item" id="settings"><i class="fa-solid fa-gear"></i><span>Setting</span></div>
+      <div class="footer-item" id="home"><i class="fa-solid fa-house"></i><span>Home</span></div>
+      <div class="footer-item" id="notifications"><i class="fa-solid fa-bell"></i><span>Notifications</span></div>
+  </footer> 
+  </body>
+</html>

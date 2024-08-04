@@ -1,0 +1,168 @@
+{
+    "alljobs": [
+        {
+            "id" : 1 ,
+            "title" : "  Registered Nurse - Sheba Medical Center" ,
+            "location" : "Tel Aviv" ,
+            "salary" : "140$/hour",
+            "description" : "Providing patient care at Sheba Medical Center." ,
+            "requirements": "Nursing degree \n 2+ years of experience",
+            "timeago" : "2 days ago"
+        },
+        {
+            "id": 2 ,
+            "title": "  Marketing Manager - Fiverr" ,
+            "location": "Tel Aviv",
+            "salary": "80$/hour",
+            "description": "Managing marketing campaigns for Fiverr.",
+            "timeago": "1 week ago",
+            "requirements": "Bachelor's degree in Marketing\n 5+ years of experience"
+        },
+        {
+            "id": 3 ,
+            "title" : "  Customer Service Representative - Wolt" ,
+            "location": "Jerusalem",
+            "salary": "50$/hour",
+            "description": "Handling customer inquiries at Wolt.",
+            "timeago": "3 days ago",
+            "requirements": "High school diploma\n Excellent communication skills"
+        },
+        {
+            "id": 4 ,
+            "title": "  Human Resources Specialist - Elbit Systems",
+            "location": "Haifa",
+            "salary": "70$/hour",
+            "description": "Managing HR activities at Elbit Systems.",
+            "timeago": "5 days ago",
+            "requirements": "Bachelor's degree in HR\n 3+ years of experience"
+        },
+        {
+            "id": 5 , 
+            "title": "  Data Scientist - Mobileye" ,
+            "location": "Jerusalem",
+            "salary": "120$/hour",
+            "description": "Analyzing data for Mobileye.",
+            "timeago": "1 day ago",
+            "requirements": "PhD in Computer Science\n 4+ years of experience"
+        },
+        {
+            "id": 6 ,
+            "title": "  Elementary School Teacher - AMIT Schools" ,
+            "location": "Rishon LeZion",
+            "salary": "30$/hour",
+            "description": "Teaching elementary students at AMIT Schools.",
+            "timeago": "2 weeks ago",
+            "requirements": "Teaching certification\n 2+ years of experience"
+        },
+        {
+            "id": 7 ,
+            "title" : "  Operations Manager - Intel " , 
+            "location": "Petah Tikva",
+            "salary": "110$/hour",
+            "description": "Overseeing operations at Intel.",
+            "timeago": "4 days ago",
+            "requirements": "Bachelor's degree in Business\n 5+ years of experience"
+        },
+        {
+            "id": 8 ,
+            "title": "  Chef - Eyal Shani Group" , 
+            "location": "Afula",
+            "salary": "70$/hour",
+            "description": "Preparing meals at Eyal Shani Group.",
+            "timeago": "1 month ago",
+            "requirements": "Culinary degree\n 3+ years of experience"
+        },
+        {
+            "id": 9,
+            "title": "  Legal Assistant - Metiar Law Offices" ,
+            "location": "Haifa",
+            "salary": "40$/hour",
+            "description": "Assisting with legal matters at Metiar Law Offices.",
+            "timeago": "2 weeks ago",
+            "requirements": "Paralegal certification\n 2+ years of experience"
+        }
+    ],
+    "jobsforyou":[
+        {
+            "id":1 , 
+            "title": "  QA Tester - Wix" , 
+            "location": "Tel Aviv",
+            "salary": "75$/hour",
+            "description": "Testing software for Wix.",
+            "timeago": "1 week ago",
+            "requirements": "Bachelor's degree in Computer Science\n 2+ years of experience"
+        },
+        {
+            "id": 2,
+            "title": "  QA Tester - Check Point Software Technologies" ,
+            "location": "Kryat Ono",
+            "salary": "100$/hour",
+            "description": "Ensuring quality at Check Point.",
+            "timeago": "3 days ago",
+            "requirements": "Bachelor's degree in Computer Science\n 3+ years of experience"
+        },
+        {
+            "id":3 , 
+            "title" : "  QA Tester - Waze" ,
+            "location": "Bnei Brak",
+            "salary": "124$/hour",
+            "description": "Testing navigation software at Waze.",
+            "timeago": "5 days ago",
+            "requirements": "Bachelor's degree in Computer Science\n 2+ years of experience"
+        },
+        {
+            "id":4 , 
+            "title": "  QA Tester - Playtika" , 
+            "location": "Herzliya",
+            "salary": "155$/hour",
+            "description": "Testing games at Playtika.",
+            "timeago": "2 days ago",
+            "requirements": "Bachelor's degree in Computer Science\n 1.5+ years of experience"
+        },
+        {
+            "id":5 ,
+            "title": "  QA Tester - Foresight Autonomous Holdings",
+            "location": "Nesher",
+            "salary": "105$/hour",
+            "description": "Ensuring quality at Foresight.",
+            "timeago": "1 week ago",
+            "requirements": "Bachelor's degree in Computer Science\n 3+ years of experience"
+        },
+        {
+            "id":6 , 
+            "title": "  QA Tester - Microsoft" , 
+            "location": "Tel-Aviv",
+            "salary": "130$/hour",
+            "description": "As a QA Tester at Microsoft, you will play a crucial role in ensuring the quality and reliability of our software products. You will collaborate closely with developers, product managers, and other stakeholders to conduct thorough testing and identify any issues or defects before software releases.",
+            "timeago": "2 weeks ago",
+            "requirements": "Bachelor's degree in Computer Science\n 4+ years of experience"
+        },
+        {
+            "id":7 ,
+            "title": "  QA Tester - OrCam Technologies" , 
+            "location": "Ramat Gan",
+            "salary": "190$/hour",
+            "description": "Testing assistive technologies at OrCam.",
+            "timeago": "4 days ago",
+            "requirements": "Bachelor's degree in Computer Science\n  3+ years of experience"
+        },
+        {
+            "id":8 , 
+            "title": "  QA Tester - Gett" , 
+            "location": "Ashkelon",
+            "salary": "115$hour",
+            "description": "Ensuring quality at Gett.",
+            "timeago": "1 week ago",
+            "requirements": "Bachelor's degree in Computer Science\n  2.5+ years of experience"
+        },
+        {
+            "id":9 , 
+            "title": "  QA Tester - Riskified" , 
+            "location": "Bat-Yam",
+            "salary": "85$/hour",
+            "description": "Testing e-commerce solutions at Riskified.",
+            "timeago": "3 days ago",
+            "requirements": "Bachelor's degree in Computer Science\n  3.5+ years of experience"
+        }
+    ]
+}
